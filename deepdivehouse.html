@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hogwarts Sorting Ceremony - Discover your house, its lore, traits and secret privileges." />
+  <meta name="author" content="Adrish, Shreyansh, Annesha" />
+  <meta name="keywords" content="Hogwarts, Sorting Hat, Slytherin, Gryffindor, Hufflepuff, Ravenclaw" />
+  <meta property="og:title" content="Hogwarts Sorting - House Dossier" />
+  <meta property="og:description" content="Explore house archives, traits and vault chronicles." />
+  <title>Hogwarts Sorting</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div>
+      <a href="index.html">Hogwarts</a>
+      <p>School of witchcraft and wizardry</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">welcome</a></li>
+        <li><a href="houses.html" aria-current="page">the four Houses</a></li>
+        <li><a href="quiz.html">sorting ceremony</a></li>
+        <li><a href="profile.html">sorting result</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- House Tabs -->
+    <section aria-label="buttons to change the club">
+      <ul id="house-tabs">
+        <li><button id="tab-gryffindor" onclick="switchHouse('gryffindor')">Gryffindor</button></li>
+        <li><button id="tab-slytherin" onclick="switchHouse('slytherin')">Slytherin</button></li>
+        <li><button id="tab-hufflepuff" onclick="switchHouse('hufflepuff')">Hufflepuff</button></li>
+        <li><button id="tab-ravenclaw" onclick="switchHouse('ravenclaw')">Ravenclaw</button></li>
+      </ul>
+    </section>
+
+    <!-- Header -->
+    <section>
+      <p>Solemn Decree • Great Hall Sorting Rite</p>
+      <p>By Order and Insight of the Ancient Enchanted Sorting Hat...</p>
+      <h1 id="house-name">SLYTHERIN</h1>
+      <blockquote>
+        <p id="house-motto">&ldquo;Or yet in Slytherin you'll make your real friends, those cunning folk use any means to achieve their ends.&rdquo;</p>
+      </blockquote>
+      <p><cite id="house-motto-author">— The Sorting Hat • Founders' Anthology</cite></p>
+    </section>
+
+    <!-- Crest + Speech -->
+    <section aria-label="details of the crest and speech">
+      <ul>
+        <li id="badge-title">Salazar's Legacy</li>
+        <li id="badge-anno">Anno 990 A.D.</li>
+      </ul>
+
+      <figure>
+        <!-- ADD IMAGE SRC HERE -->
+        <img id="house-crest-img" alt="House crest" src="" />
+        <figcaption>House Logo</figcaption>
+      </figure>
+
+      <h2 id="house-epithet">House of the Serpent</h2>
+      <p id="house-location">Subterranean Catacombs • Under the Black Lake</p>
+
+      <section aria-label="house element, colors, totem">
+        <article>
+          <h3>Element</h3>
+          <p id="house-element">
+            <span id="element-icon" class="material-symbols-outlined">water_drop</span>
+            <span id="element-text">Water</span>
+          </p>
+        </article>
+        <article>
+          <h3>Colors</h3>
+          <p id="house-colors">Emerald & Silver</p>
+        </article>
+        <article>
+          <h3>Totem</h3>
+          <p id="house-totem">Serpent</p>
+        </article>
+      </section>
+
+      <section aria-label="hat's speech'">
+        <p id="hat-speech">Ah, yes... what a sharp mind we have here. You possess a thirst to prove yourself, calculating discernment, and a quiet greatness waiting to unfold. Ambition that will carve paths where others see only stone. No hesitation, no regret... your destiny breathes in the deep waters.</p>
+      </section>
+
+      <section id="traits-container">
+        <h2>House Compatibility</h2>
+        <article>
+          <h3 id="t1-name">Ambition</h3>
+          <span id="t1-val">94%</span>
+          <progress id="t1-bar" max="100" value="94"></progress>
+          <p id="t1-desc">Drive toward greatness</p>
+        </article>
+        <article>
+          <h3 id="t2-name">Cunning</h3>
+          <span id="t2-val">89%</span>
+          <progress id="t2-bar" max="100" value="89"></progress>
+          <p id="t2-desc">Strategic calculation</p>
+        </article>
+        <article>
+          <h3 id="t3-name">Resourcefulness</h3>
+          <span id="t3-val">84%</span>
+          <progress id="t3-bar" max="100" value="84"></progress>
+          <p id="t3-desc">Finding triumph where standard means fail</p>
+        </article>
+        <article>
+          <h3 id="t4-name">Tactical Intellect</h3>
+          <span id="t4-val">72%</span>
+          <progress id="t4-bar" max="100" value="72"></progress>
+          <p id="t4-desc">Tactical intellect & arcane astuteness</p>
+        </article>
+        <article>
+          <h3 id="t5-name">Pragmatic Valor</h3>
+          <span id="t5-val">66%</span>
+          <progress id="t5-bar" max="100" value="66"></progress>
+          <p id="t5-desc">Boldness invoked when victory is guaranteed</p>
+        </article>
+        <article>
+          <h3 id="t6-name">Devotion to Kin</h3>
+          <span id="t6-val">62%</span>
+          <progress id="t6-bar" max="100" value="62"></progress>
+          <p id="t6-desc">Fierce allegiance reserved for the trusted circle</p>
+        </article>
+      </section>
+
+      <!-- Privileges -->
+      <section>
+        <span class="material-symbols-outlined">key</span>
+        <span>Catacomb Cipher</span>
+        <h2 id="dossier-heading">Insignia Privilegia • Slytherin Dossier</h2>
+
+        <section aria-label="privileges">
+          <article>
+            <h3 id="sanctum-name">Dungeon Catacombs</h3>
+            <p id="sanctum-desc">Whisper before the bare, damp stone wall beside the underground dungeons beneath the Black Lake.</p>
+            <section>
+              <h4>entry key/password</h4>
+              <p id="dungeon-pwd">Sanguis Purus</p>
+              <button id="copy-pwd-btn" onclick="copyPassword()" class="material-symbols-outlined">content_copy</button>
+            </section>
+          </article>
+
+          <article>
+            <p>
+              <span class="material-symbols-outlined" id="head-icon">science</span>
+              <span>Authority</span>
+            </p>
+            <h3>Head of House</h3>
+            <strong id="head-name">Prof. Severus Snape</strong>
+            <p id="head-desc">Potions Master & Slytherin Patron.</p>
+            <p>
+              <span class="material-symbols-outlined">location_on</span>
+              <span id="head-office">Office: Dungeons Corridor V • By Appointment Only</span>
+            </p>
+          </article>
+
+          <article>
+            <p>
+              <span class="material-symbols-outlined">sentiment_very_dissatisfied</span>
+              <span>Spectre</span>
+            </p>
+            <h3>Resident Ghost</h3>
+            <p id="ghost-name">The Bloody Baron</p>
+            <p id="ghost-desc">The sole entity feared by Peeves the Poltergeist. Silently gliding the dungeons, draped in silver chains.</p>
+            <p>
+              <span class="material-symbols-outlined">shield</span>
+              <span id="ghost-role">House Champion in Spectral Matters</span>
+            </p>
+          </article>
+        </section>
+      </section>
+    </section>
+
+    <!-- Lore -->
+    <section aria-labelledby="lore-section-title" class="lore-header">
+      <header class="lore-title-row">
+        <span class="material-symbols-outlined">auto_stories</span>
+        <h2 id="lore-section-title">Sacred House Archives & Chronicles</h2>
+      </header>
+      <p class="lore-subtitle">Browse sacred house scriptures, secret passages, and whispered chronicles — or seal your own memory into the archives.</p>
+
+      <ul class="filter-group">
+        <li><button class="filter-btn active" id="filter-all" onclick="filterLore('all')">All</button></li>
+        <li><button class="filter-btn" id="filter-relic" onclick="filterLore('Ancient Relic')">Relics</button></li>
+        <li><button class="filter-btn" id="filter-passage" onclick="filterLore('Secret Passage')">Passages</button></li>
+        <li><button class="filter-btn" id="filter-ghost" onclick="filterLore('Ghostly Encounter')">Ghosts</button></li>
+      </ul>
+
+      <section class="codex-grid" aria-labelledby="lore-section-title">
+        <section class="chronicles-col">
+          <header class="chronicles-head">
+            <h3>Chronicled Folios</h3>
+            <span id="lore-counter">3 Folios Recorded</span>
+          </header>
+          <section class="parchment-scroll" id="lore-feed"></section>
+        </section>
+
+        <article class="parchment-viewer" id="lore-viewer-panel">
+          <header class="viewer-top">
+            <p class="badge-row">
+              <span class="badge" id="viewer-badge">Ancient Relic</span>
+              <time class="era" id="viewer-era">Anno 990 A.D.</time>
+            </p>
+            <p class="vault-row">
+              <button class="icon-btn" onclick="readLoreAloud()" title="Chant Chronicle">
+                <span class="material-symbols-outlined">volume_up</span>
+              </button>
+              <span class="vault-label">Vault Folio Active</span>
+            </p>
+          </header>
+
+          <h3 id="viewer-title">The Silver Serpent Chandelier</h3>
+          <blockquote class="quote-box">
+            <p id="viewer-body">&ldquo;Suspended above the emerald hearth in the Slytherin Common Room rests a silver chandelier crafted by goblin metallurgists. On stormy nights beneath the Black Lake, its serpentine serpents subtly turn to mirror the swimming shadows of the Giant Squid.&rdquo;</p>
+          </blockquote>
+
+          <footer class="viewer-foot">
+            <p class="author">
+              <span class="material-symbols-outlined">history_edu</span>
+              Recorded by: <strong id="viewer-author">Horace S. • Year VII</strong>
+            </p>
+            <button class="copy-btn" onclick="copyCurrentLoreText()">
+              <span class="material-symbols-outlined">content_copy</span> Copy Scroll
+            </button>
+          </footer>
+        </article>
+      </section>
+    </section>
+
+    <section class="registry">
+      <div class="registry-system">
+        <span class="material-symbols-outlined">memory</span>
+        <p>
+          <strong>Scholastic Technical Registry</strong>
+          <span>Hogwarts Sorting Logic • System Telemetry v9.4</span>
+        </p>
+      </div>
+      <ul class="registry-credits">
+        <li class="credit-adrish"><strong>Adrish:</strong> HTML, CSS, Enchanted Images, Pagination & Deployment</li>
+        <li class="credit-shreyansh"><strong>Shreyansh:</strong> JavaScript, Hat Verdict Logic & Python Integration</li>
+        <li class="credit-annesha"><strong>Annesha:</strong> MySQL House Database & Python Server Architecture</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>“Draco Dormiens Nunquam Titillandus”</p>
+    <small>© Hogwarts School of Witchcraft and Wizardry</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

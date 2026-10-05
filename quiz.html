@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Page title
+    </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet">
+  </head>
+  <link rel="stylesheet" href="base-style.css">
+  <body>
+    <header>
+      <section role="banner" aria-label="Website Name">
+        <a class="project-name" href="index.html">
+          Hogwarts
+        </a>
+        <p>
+          School of witchcraft & wizardry
+        </p>
+      </section>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">
+              welcome
+            </a>
+          </li>
+          <li>
+            <a href="thefourhouses.html">
+              the four Houses
+            </a>
+          </li>
+          <li>
+            <a aria-current="page" href="quiz.html">
+              sorting ceremony
+            </a>
+          </li>
+          <li>
+            <a href="profile.html">
+              sorting result
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- Progress -->
+      <section>
+          
+          
+            <p class="kicker">
+              <span  class="material-symbols-outlined" aria-hidden="true">
+            auto_awesome
+          </span>
+              The Ritual of Segregation
+              <span  class="material-symbols-outlined" aria-hidden="true">
+            auto_awesome
+          </span>
+            </p>
+            <h2>
+              QUESTION I
+              <span>
+                of VII
+              </span>
+            </h2>
+          </div>
+          <ol>
+            <li>
+              I · ᚦ
+            </li>
+            <li>
+              II · ᚨ
+            </li>
+            <li>
+              III · ᚱ
+            </li>
+            <li>
+              IV · ᚲ
+            </li>
+            <li>
+              V · ᚷ
+            </li>
+            <li>
+              VI · ᚹ
+            </li>
+            <li>
+              VII · ᚺ
+            </li>
+          </ol>
+      </section>
+      <!-- Left -->
+      <section>
+        <figure>
+          <img alt="Weather-worn Sorting Hat on an oak pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNWVlVA60d7bHY_uUWD2BjHaiqDQwpSW-S2m5tuO6-yp-rJrrQHeCYKAGq0lqaVYl3-VDfBFEvS09EbxkQY1I3tA64GLbOdM_y8gYZ-qofByO77eldF042V_Lp0Lwlh4-3Pa9F9D-OmPa7B0o77w985S5NUaKKIQDFaUuAgMKVczFa66otTzuovG_FQS8wIl7GjR4mfYUX0nVWUpeK_RB6dWwxnILsYYRqWiaJAQXBXTaBvv9Ea-1rOg" />
+          <figcaption>
+            The Sorting Hat Is Awake!
+          </figcaption>
+        </figure>
+        <p>
+          <strong>
+            The Sorting Hat Inquires
+          </strong>
+          <span aria-hidden="true">
+            ✦
+          </span>
+          <em>
+            Penetrating your innermost mind...
+          </em>
+        </p>
+        <blockquote>
+          <p>
+            Hmm, interesting... what do we have here? A quiet resolve or a roaring fire within? Let us look deep into your soul...
+          </p>
+        </blockquote>
+        <small>
+          Solemn Inquest No. 492
+        </small>
+        
+          <p>
+            <span class="material-symbols-outlined" aria-hidden="true">
+              psychology_alt
+            </span>
+            Instinctual Reflex Test
+          </p>
+          <h1>
+            When faced with imminent magical danger, your first instinct is to:
+          </h1>
+          <p>
+            Cast aside premeditated doctrine. Select the parchment inscription that speaks unconditionally to your raw impulse.
+          </p>
+        
+        <fieldset id="options-group">
+          <legend>
+            Choose one answer
+          </legend>
+          <label>
+            <input type="radio" name="sorting-answer" value="gryffindor" onchange="selectOption(this.closest('label'), 'gryffindor', {bravery: 18, courage: 15, honor: 8})" />
+            <b>
+              A
+            </b>
+            <h2>
+              Draw your wand and step boldly into the line of fire to shield others.
+            </h2>
+            <p>
+              Hesitation breeds ruin. Valor requires immediate corporal sacrifice before collateral harm befalls the innocent.
+            </p>
+          </label>
+          <label>
+            <input type="radio" name="sorting-answer" value="slytherin" onchange="selectOption(this.closest('label'), 'slytherin', {ambition: 18, cunning: 15, strategy: 10})" />
+            <b>
+              B
+            </b>
+            <h2>
+              Assess the situation from the shadows, seeking the strategic flaw to turn the tide in your favor.
+            </h2>
+            <p>
+              Headlong heroics are folly. Power manifests through cunning repositioning and strikes delivered with lethal economy.
+            </p>
+          </label>
+          <label>
+            <input type="radio" name="sorting-answer" value="hufflepuff" onchange="selectOption(this.closest('label'), 'hufflepuff', {loyalty: 20, honor: 12, patience: 10})" />
+            <b>
+              C
+            </b>
+            <h2>
+              Form an unbreakable circle with your companions, ensuring no one is left behind or forgotten.
+            </h2>
+            <p>
+              True resilience lies in solidarity. Individual glory crumbles; fidelity to your sworn brethren sustains through dark hours.
+            </p>
+          </label>
+          <label>
+            <input type="radio" name="sorting-answer" value="ravenclaw" onchange="selectOption(this.closest('label'), 'ravenclaw', {wisdom: 18, wit: 14, intellect: 10})" />
+            <b>
+              D
+            </b>
+            <h2>
+              Analyze the incantation or entity immediately, deducing the exact counter-curse required.
+            </h2>
+            <p>
+              Chaos yields to unyielding scholastic logic. Deconstruct the arcane mechanics before wasting precious vitality.
+            </p>
+          </label>
+        </fieldset>
+        <div>
+          <em>
+            Choice seals upon inscription
+          </em>
+          <button id="next-btn" type="button">
+            Next Question
+            <span class="material-symbols-outlined" aria-hidden="true">
+              east
+            </span>
+          </button>
+        </div>
+      </section>
+      <section class="registry">
+        <div class="registry-system">
+          <span class="material-symbols-outlined">
+            memory
+          </span>
+          <p>
+            <strong>
+              Scholastic Technical Registry
+            </strong>
+            <span>
+              Hogwarts Sorting Logic • System Telemetry v9.4
+            </span>
+          </p>
+        </div>
+        <ul class="registry-credits">
+          <li class="credit-adrish">
+            <strong>
+              Adrish:
+            </strong>
+            HTML, CSS, Enchanted Images, Pagination & Deployment
+          </li>
+          <li class="credit-shreyansh">
+            <strong>
+              Shreyansh:
+            </strong>
+            JavaScript, Hat Verdict Logic & Python Integration
+          </li>
+          <li class="credit-annesha">
+            <strong>
+              Annesha:
+            </strong>
+            MySQL House Database & Python Server Architecture
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <h2>
+        <q>
+          Draco Dormiens Nunquam Titillandus
+        </q>
+      </h2>
+      <p>
+        Never Tickle a Sleeping Dragon&period; Preserving centuries of magical lineage&comma; scholastic pursuit and ancient arcane arts across Gryffindor&comma; Ravenclaw&comma; Hufflepuff and Slytherin
+      </p>
+    </footer>
+  </body>
+</html>
