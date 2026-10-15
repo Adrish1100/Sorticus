@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>
-      Page title
-    </title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+<!--   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  
+  <title>sorticus</title>
+  <meta name="description" content="sorticus - A minimal, aesthetic sorting visualizer and playground.">
+  <meta name="author" content="sorticus">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="hsl(262 83% 58%)">
+  <meta name="robots" content="index, follow">
 
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet">
-  </head>
+  <!-- Open Graph -->
+  <meta property="og:title" content="sorticus">
+  <meta property="og:description" content="A minimal, aesthetic sorting visualizer.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- 1. Text fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Beau+Rivage&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- 2. Ligatures / Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,psychology_alt,memory,east&display=swap" rel="stylesheet">
+
+  <!-- my own CSS files -->
   <link rel="stylesheet" href="base-style.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
   <body>
     <header>
       <section role="banner" aria-label="Website Name">
@@ -29,7 +49,7 @@
             </a>
           </li>
           <li>
-            <a href="thefourhouses.html">
+            <a href="houses.html">
               the four Houses
             </a>
           </li>
@@ -49,8 +69,6 @@
     <main>
       <!-- Progress -->
       <section>
-          
-          
             <p class="kicker">
               <span  class="material-symbols-outlined" aria-hidden="true">
             auto_awesome
@@ -60,13 +78,13 @@
             auto_awesome
           </span>
             </p>
-            <h2>
-              QUESTION I
+            <h2 class="gold quiz">
+              Question <span id="question-number">I</span>
               <span>
                 of VII
               </span>
             </h2>
-          </div>
+          </section>
           <ol>
             <li>
               I · ᚦ
@@ -92,17 +110,18 @@
           </ol>
       </section>
       <!-- Left -->
-      <section>
-        <figure>
-          <img alt="Weather-worn Sorting Hat on an oak pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNWVlVA60d7bHY_uUWD2BjHaiqDQwpSW-S2m5tuO6-yp-rJrrQHeCYKAGq0lqaVYl3-VDfBFEvS09EbxkQY1I3tA64GLbOdM_y8gYZ-qofByO77eldF042V_Lp0Lwlh4-3Pa9F9D-OmPa7B0o77w985S5NUaKKIQDFaUuAgMKVczFa66otTzuovG_FQS8wIl7GjR4mfYUX0nVWUpeK_RB6dWwxnILsYYRqWiaJAQXBXTaBvv9Ea-1rOg" />
-          <figcaption>
-            The Sorting Hat Is Awake!
+      <section aria-label="" class="sorting-hat inquest-card">
+        <figure class="inquest-figure">
+          <img alt="Weather-worn Sorting Hat on an oak pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNWVlVA60d7bHY_uUWD2BjHaiqDQwpSW-S2m5tuO6-yp-rJrrQHeCYKAGq0lqaVYl3-VDfBFEvS09EbxkQY1I3tA64GLbOdM_y8gYZ-qofByO77eldF042V_Lp0Lwlh4-3Pa9F9D-OmPa7B0o77w985S5NUaKKIQDFaUuAgMKVczFa66otTzuovG_FQS8wIl7GjR4mfYUX0nVWUpeK_RB6dWwxnILsYYRqWiaJAQXBXTaBvv9Ea-1rOg" 
+          class="inquest-image">
+          <figcaption class="inquest-caption">
+              awake!
           </figcaption>
         </figure>
-        <p>
-          <strong>
+<div>        <p class="inquest">
+          <b>
             The Sorting Hat Inquires
-          </strong>
+          </b>
           <span aria-hidden="true">
             ✦
           </span>
@@ -111,112 +130,147 @@
           </em>
         </p>
         <blockquote>
-          <p>
-            Hmm, interesting... what do we have here? A quiet resolve or a roaring fire within? Let us look deep into your soul...
+          <p class="inquest-quote">
+            Hmm, interesting... what do we have here? A quiet resolve or a roaring fire within? Let us look deep into your soul.
           </p>
-        </blockquote>
-        <small>
-          Solemn Inquest No. 492
-        </small>
-        
+        </blockquote></div>
+        </section>
+        <section class="question">
           <p>
             <span class="material-symbols-outlined" aria-hidden="true">
               psychology_alt
             </span>
             Instinctual Reflex Test
           </p>
-          <h1>
+          <h1 class="gold">
             When faced with imminent magical danger, your first instinct is to:
           </h1>
-          <p>
+          <p class="description">
             Cast aside premeditated doctrine. Select the parchment inscription that speaks unconditionally to your raw impulse.
           </p>
         
-        <fieldset id="options-group">
-          <legend>
-            Choose one answer
-          </legend>
-          <label>
-            <input type="radio" name="sorting-answer" value="gryffindor" onchange="selectOption(this.closest('label'), 'gryffindor', {bravery: 18, courage: 15, honor: 8})" />
-            <b>
-              A
-            </b>
-            <h2>
-              Draw your wand and step boldly into the line of fire to shield others.
-            </h2>
-            <p>
-              Hesitation breeds ruin. Valor requires immediate corporal sacrifice before collateral harm befalls the innocent.
-            </p>
-          </label>
-          <label>
-            <input type="radio" name="sorting-answer" value="slytherin" onchange="selectOption(this.closest('label'), 'slytherin', {ambition: 18, cunning: 15, strategy: 10})" />
-            <b>
-              B
-            </b>
-            <h2>
-              Assess the situation from the shadows, seeking the strategic flaw to turn the tide in your favor.
-            </h2>
-            <p>
-              Headlong heroics are folly. Power manifests through cunning repositioning and strikes delivered with lethal economy.
-            </p>
-          </label>
-          <label>
-            <input type="radio" name="sorting-answer" value="hufflepuff" onchange="selectOption(this.closest('label'), 'hufflepuff', {loyalty: 20, honor: 12, patience: 10})" />
-            <b>
-              C
-            </b>
-            <h2>
-              Form an unbreakable circle with your companions, ensuring no one is left behind or forgotten.
-            </h2>
-            <p>
-              True resilience lies in solidarity. Individual glory crumbles; fidelity to your sworn brethren sustains through dark hours.
-            </p>
-          </label>
-          <label>
-            <input type="radio" name="sorting-answer" value="ravenclaw" onchange="selectOption(this.closest('label'), 'ravenclaw', {wisdom: 18, wit: 14, intellect: 10})" />
-            <b>
-              D
-            </b>
-            <h2>
-              Analyze the incantation or entity immediately, deducing the exact counter-curse required.
-            </h2>
-            <p>
-              Chaos yields to unyielding scholastic logic. Deconstruct the arcane mechanics before wasting precious vitality.
-            </p>
-          </label>
-        </fieldset>
+<fieldset id="options-group">
+  <legend>Choose one answer</legend>
+
+  <article class="option-card" data-house="gryffindor">
+    <input
+      type="radio"
+      name="sorting-answer"
+      id="opt-a"
+      value="gryffindor"
+      data-text="A"
+      onchange="selectOption(this.closest('article'), 'gryffindor', { bravery: 18, courage: 15, honor: 8 })"
+    >
+    <h2 class="option-head">
+      <label for="opt-a">
+        Draw your wand and step boldly into the line of fire to shield others.
+      </label>
+    </h2>
+    <p>
+      <label for="opt-a">
+        Hesitation breeds ruin. Valor requires immediate corporal sacrifice before collateral harm befalls the innocent.
+      </label>
+    </p>
+  </article>
+
+  <article class="option-card" data-house="slytherin">
+    <input
+      type="radio"
+      name="sorting-answer"
+      id="opt-b"
+      value="slytherin"
+      data-text="B"
+      onchange="selectOption(this.closest('article'), 'slytherin', { ambition: 18, cunning: 15, strategy: 10 })"
+    >
+    <h2 class="option-head">
+      <label for="opt-b">
+        Assess the situation from the shadows, seeking the strategic flaw to turn the tide in your favor.
+      </label>
+    </h2>
+    <p>
+      <label for="opt-b">
+        Headlong heroics are folly. Power manifests through cunning repositioning and strikes delivered with lethal economy.
+      </label>
+    </p>
+  </article>
+
+  <article class="option-card" data-house="hufflepuff">
+    <input
+      type="radio"
+      name="sorting-answer"
+      id="opt-c"
+      value="hufflepuff"
+      data-text="C"
+      onchange="selectOption(this.closest('article'), 'hufflepuff', { loyalty: 20, honor: 12, patience: 10 })"
+    >
+    <h2 class="option-head">
+      <label for="opt-c">
+        Form an unbreakable circle with your companions, ensuring no one is left behind or forgotten.
+      </label>
+    </h2>
+    <p>
+      <label for="opt-c">
+        True resilience lies in solidarity. Individual glory crumbles; fidelity to your sworn brethren sustains through dark hours.
+      </label>
+    </p>
+  </article>
+
+  <article class="option-card" data-house="ravenclaw">
+        
+    <input
+      type="radio"
+      name="sorting-answer"
+      id="opt-d"
+      value="ravenclaw"
+      data-text="D"
+      onchange="selectOption(this.closest('article'), 'ravenclaw', { wisdom: 18, wit: 14, intellect: 10 })"
+    >
+    <h2 class="option-head">
+      <label for="opt-d">
+        Analyze the incantation or entity immediately, deducing the exact counter-curse required.
+      </label>
+    </h2>
+    
+    
+    <p>
+      <label for="opt-d">
+        Chaos yields to unyielding scholastic logic. Deconstruct the arcane mechanics before wasting precious vitality.
+      </label>
+    </p>
+  </article>
+
+</fieldset>
         <div>
           <em>
             Choice seals upon inscription
           </em>
           <button id="next-btn" type="button">
             Next Question
-            <span class="material-symbols-outlined" aria-hidden="true">
+            <span class="material-symbols-outlined next-question" aria-hidden="true">
               east
             </span>
           </button>
         </div>
       </section>
-      <section class="registry">
+      <section class="registry" aria-labelledby="heading">
         <div class="registry-system">
           <span class="material-symbols-outlined">
             memory
           </span>
-          <p>
-            <strong>
+            <h2 id="heading">
               Scholastic Technical Registry
-            </strong>
-            <span>
+            </h2>
+          </div> 
+            <p>
               Hogwarts Sorting Logic • System Telemetry v9.4
-            </span>
-          </p>
-        </div>
+            </p>
+        
         <ul class="registry-credits">
           <li class="credit-adrish">
             <strong>
               Adrish:
             </strong>
-            HTML, CSS, Enchanted Images, Pagination & Deployment
+            HTML, CSS, Pagination & Deployment
           </li>
           <li class="credit-shreyansh">
             <strong>
@@ -228,18 +282,19 @@
             <strong>
               Annesha:
             </strong>
-            MySQL House Database & Python Server Architecture
+            MySQL Database & Python Server Architecture
           </li>
         </ul>
       </section>
     </main>
     <footer>
-      <h2>
-        <q>
+        <p class="kicker gold">
+          ✦  
+        </p>
+        <q class="gold" style="font-family:unset;">
           Draco Dormiens Nunquam Titillandus
         </q>
-      </h2>
-      <p>
+      <p class="description">
         Never Tickle a Sleeping Dragon&period; Preserving centuries of magical lineage&comma; scholastic pursuit and ancient arcane arts across Gryffindor&comma; Ravenclaw&comma; Hufflepuff and Slytherin
       </p>
     </footer>

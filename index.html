@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>
-      sorticus
-    </title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sorticus</title>
+  <meta name="description" content="sorticus - A minimal, aesthetic sorting visualizer and playground.">
+  <meta name="author" content="sorticus">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="hsl(262 83% 58%)">
+  <meta name="robots" content="index, follow">
 
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="base-style.css">
-  </head>
+  <!-- Open Graph -->
+  <meta property="og:title" content="sorticus">
+  <meta property="og:description" content="A minimal, aesthetic sorting visualizer.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- 1. Text fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Beau+Rivage&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- 2. Ligatures / Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,auto_fix_high,shield,memory&display=swap" rel="stylesheet">
+
+  <!-- my own CSS files -->
+  <link rel="stylesheet" href="base-style.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
   <body>
     <header>
     <section role="banner" aria-label="Website Name">  
       <a class="project-name" href="index.html">
-        Hogwarts
+         Hogwarts
       </a>
-      <p>School of witchcraft and wizardry</p>
+      <p>School of witchcraft &amp; wizardry</p>
       </section>
       <nav>
         <ul>
@@ -55,125 +75,178 @@
           </span>
             </p>
       <h1>
-        Welcome To Hogwarts
+        Welcome To <span class="project-name">Hogwarts</span>
       </h1>
-      <h2>
+      <p class="kick-line">
         Discover Your True House &mdash; Where Bravery&comma; Wisdom&comma; Loyalty &amp; Ambition Meet Their Calling
-      </h2>
+      </>
       <figure>
         <figcaption>
-          ● the hat awakens
+           The Hat Awakens
         </figcaption>
-        <img src="hat.png" alt="">
+                  <img alt="Enchanted Sorting Hat Emblem" src="Hat-chequered.jpg"
+ width="300" height="300" />
       </figure>
-      <button >
-        Set Up your profile
-      </button>
-      <button>
-        Take the sorting quiz
-      </button>
-      <button>
-        Explore the four houses
-      </button>
-      <section aria-label="Quote of the Sorting Hat">
+      
+<section class="action-btns" aria-label="Getting started actions">
+  <button class="btn btn--primary" type="button" command="show-modal" commandfor="dialog-modal">
+    Set Up your profile
+  </button>
+
+  <button class="btn btn--accent" type="button">
+    <span class="material-symbols-outlined btn__icon btn__icon--quiz" aria-hidden="true">auto_fix_high</span>
+    Take the sorting quiz
+  </button>
+
+  <button class="btn btn--ghost" type="button">
+  <span class="material-symbols-outlined btn__icon btn__icon--quiz" aria-hidden="true">shield</span>  Explore the four houses
+  </button>
+</section>
+      <section aria-label="Quote of the Sorting Hat" class="gold">
         <blockquote>
           <p>
             There&apos;s nothing hidden in your head the Sorting Hat cannot see. So&comma; try me on and I will tell you where you ought to be&period;
           </p>
-          <p>
+        </blockquote>
+          <p class="description">
             <cite>
-              &mdash; THE SORTING HAT&apos;S SONG&period; FEAST OF 1991 &mdash;
+              &mdash; THE SORTING HAT&apos;S SONG&period; FEAST OF <time datetime="1991">1991</time> &mdash;
             </cite>
           </p>
         </section>
-        <section>
+        <section class="house-section">
           <span class="gold">
             SCHOLASTIC QUARTERS
           </span>
-          <h2>
+          <h2 id="heading-sacred-house">
             The Four Sacred Houses
-            <span>
-              Each house carries its own grand lore crest and noble lineage founded by the gratest witches and wizards of their age
-            </span>
           </h2>
-          <article>
-            <h3>
-              Gryffindor
-            </h3>
-            <p>
-              Where dwell the brave at heart&period; Their daring&comma; nerve&comma; and chivalry set Gryffindors apart&period
-            </p>
-          </article>
-          <article>
-            <h3>
-              Ravenclaw
-            </h3>
-            <p>
-              For those of wit and learning&comma; where those of true intellecr will always find their kind&period;
-            </p>
-          </article>
-          <article>
-            <h3>
-              Hufflepuff
-            </h3>
-            <p>
-              Where they are just and loyal&comma; patient&comma; true&comma; and unfraid of diligent scholastic toil&period
-            </p>
-          </article>
-          <article>
-            <h3>
-              Slytherin
-            </h3>
-            <p>
-              Here you will find real friends&comma; whose cunning folk use any means to achieve their ends  kind&period;
-            </p>
-          </article>
+            <p class="sacred-house-desc">
+              Each house carries its own grand lore crest and noble lineage founded by the gratest witches and wizards of their age&period;
+            </p>     
+            
+<article class="gryffindor" data-color="hsl(0 100% 76.08% / 0.5)" style="--color: hsl(0 100% 76.08%)">
+ <div class="top">
+<span class="trait">Courage • Chivalry</span>
+<span class="material-symbols-outlined" aria-hidden="true">local_fire_department</span>
+</div>
+  <h3>Gryffindor</h3>
+  <p>Where dwell the brave at heart. Their daring, nerve, and chivalry set Gryffindors apart.</p>
+  <footer>Element <span class="element">Fire</span></footer>
+</article>
+
+<article class="ravenclaw" data-color="hsl(217.09 88.71% 75.69% / 0.5)" style="--color: hsl(217.09 88.71% 75.69%)">
+  <div class="top">
+  <span class="trait">Wit • Wisdom</span>
+  <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+</div>
+  <h3>Ravenclaw</h3>
+  <p>For those of wit and learning, where those of true intellect will always find their kind.</p>
+  <footer>Element <span class="element">Air</span></footer>
+</article>
+
+<article class="hufflpuff" data-color="hsl(33.74 100% 68.63% / 0.5)" style="--color: hsl(33.74 100% 68.63%)">
+    <div class="top">
+  <span class="trait">Loyalty • Patience</span>
+  <span class="material-symbols-outlined" aria-hidden="true">spa</span>
+</div>
+  <h3>Hufflepuff</h3>
+  <p>Where they are just and loyal, patient, true, and unfraid of diligent scholastic toil.</p>
+  <footer>Element <span class="element">Earth</span></footer>
+</article>
+
+<article class="slytherin" data-color="hsl(from var(--tertiary) h s l / 0.5)" style="--color: var(--tertiary)">
+    <div class="top">
+  <span class="trait">Ambition • Cunning</span>
+  <span class="material-symbols-outlined" aria-hidden="true">water_drop</span>
+</div>
+  <h3>Slytherin</h3>
+  <p>Here you will find real friends, whose cunning folk use any means to achieve their ends.</p>
+  <footer>Element <span class="element">Water</span></footer>
+</article>
         </section>
         
-        <section class="registry">
-      <div class="registry-system">
-        <span class="material-symbols-outlined">memory</span>
-        <p>
-          <strong>Scholastic Technical Registry</strong>
-          <span>Hogwarts Sorting Logic • System Telemetry v9.4</span>
-        </p>
-      </div>
-      <ul class="registry-credits">
-        <li class="credit-adrish"><strong>Adrish:</strong> HTML, CSS, Enchanted Images, Pagination & Deployment</li>
-        <li class="credit-shreyansh"><strong>Shreyansh:</strong> JavaScript, Hat Verdict Logic & Python Integration</li>
-        <li class="credit-annesha"><strong>Annesha:</strong> MySQL House Database & Python Server Architecture</li>
-      </ul>
-    </section>
-    
-      </main>
-      <dialog>
+     <section class="registry" aria-labelledby="heading">
+        <div class="registry-system">
+          <span class="material-symbols-outlined">
+            memory
+          </span>
+            <h2 id="heading">
+              Scholastic Technical Registry
+            </h2>
+          </div> 
+            <p>
+              Hogwarts Sorting Logic • System Telemetry v9.4
+            </p>
+        
+        <ul class="registry-credits">
+          <li class="credit-adrish">
+            <strong>
+              Adrish:
+            </strong>
+            HTML, CSS, Pagination & Deployment
+          </li>
+          <li class="credit-shreyansh">
+            <strong>
+              Shreyansh:
+            </strong>
+            JavaScript, Hat Verdict Logic & Python Integration
+          </li>
+          <li class="credit-annesha">
+            <strong>
+              Annesha:
+            </strong>
+            MySQL Database & Python Server Architecture
+          </li>
+        </ul>
+      </section>
+
+  </main>
+
+<dialog id="dialog-modal">
         <h2>
           Set Up Your Profile
         </h2>
         <form method="post">
-          <label for="input-first-name">
+<section aria-label="Form Fields">          
+    <div>
+              <label for="input-first-name">
             First Name:
           </label>
-          <input id="input-first-name" name="first-name" type="text" required placeholder="Adrish">
-          <label for="input-last-name">
+          <input id="input-first-name" name="first-name" type="text" required pattern="[A-Za-z]+"placeholder="Adrish">
+          </div>
+          <div>
+              <label for="input-last-name">
             last Name:
           </label>
-          <input id="input-last-name" name="last-name" type="text" required placeholder="Datta">
-          <button type="reset">
+          <input id="input-last-name" name="last-name" type="text" required pattern="[A-Za-z]+" placeholder="Datta">
+          </div>
+          </section>
+          <section aria-label="Action buttons for The Form" class="form-buttons">
+              <button type="reset">
             Reset
           </button>
-          <button type="button"onclick="closedialog()">
+          <button type="submit">
+              Submit
+          </button>
+          
+          <button type="button" command="close" class="close-dialog" commandfor="dialog-modal">
             Close
           </button>
+          </section>
         </form>
       </dialog>
-      <footer>
-        <h2>
-          <q>
-            Draco Dormiens Nunquam Titillandus
-          </q>
-        </h2>
-        <p>Never Tickel a Sleeping Dragon&period; Preserving centuries of magical lineage&comma; scholastic pursuit and ancient arcane arts across Gryffindor&comma; Ravenclaw&comma; Hufflepuff and Slytherin</p>
-      </footer>
+      
+  <footer>
+        <p class="kicker gold">
+          ✦  
+        </p>
+        <q class="gold" style="font-family:unset;">
+          Draco Dormiens Nunquam Titillandus
+        </q>
+      <p class="description">
+        Never Tickle a Sleeping Dragon&period; Preserving centuries of magical lineage&comma; scholastic pursuit and ancient arcane arts across Gryffindor&comma; Ravenclaw&comma; Hufflepuff and Slytherin
+      </p>
+    </footer>
     </body>
   </html>

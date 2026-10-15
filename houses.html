@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!--   <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  
+  <title>sorticus</title>
+  <meta name="description" content="sorticus - A minimal, aesthetic sorting visualizer and playground.">
+  <meta name="author" content="sorticus">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="hsl(262 83% 58%)">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="sorticus">
+  <meta property="og:description" content="A minimal, aesthetic sorting visualizer.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- 1. Text fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,memory&display=swap" rel="stylesheet">
+  
+  <!-- 2. Ligatures / Icons -->
+  <link q
+
+  <!-- my own CSS files -->
+  <link rel="stylesheet" href="base-style.css">
+  <link rel="stylesheet" href="layout.css">
+</head>
+  <body>
+    <header>
+    <section role="banner" aria-label="Website Name">  
+      <a class="project-name" href="index.html">
+        Hogwarts
+      </a>
+      <p>School of witchcraft and wizardry</p>
+      </section>
+      <nav> 
+        <ul>
+          <li>
+            <a href="index.html">
+              welcome
+            </a>
+          </li>
+          <li>
+            <a aria-current="page" href="houses.html">
+              the four Houses
+            </a>
+          </li>
+          <li>
+            <a href="quiz.html">
+              sorting ceremony
+            </a>
+          </li>
+          <li>
+            <a href="profile.html">
+              sorting result
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+<p class="kicker">
+    <span  class="material-symbols-outlined" aria-hidden="true">
+            auto_awesome
+          </span>
+    THE QUADRUMVIRATE OF ANTIQUITY
+    <span  class="material-symbols-outlined" aria-hidden="true">
+            auto_awesome
+          </span>
+    </p>
+
+<h1>The Four Noble Houses</h1>
+
+<p class="kick-line">For over a millennium, these four sanctuaries have fostered magical prowess, sacred lineage, and distinct virtues. Weigh your essence against their eternal creeds before taking your seat beneath the ancient Sorting Hat.</p>
+
+<ul class="house-ul">
+    <li>ALL HOUSES</li>   
+    <li><a href="#Gryffindor">Gryffindor</a></li>   
+    <li><a href="#Slytherin">Slytherin</a></li>   
+    <li><a href="#Hufflepuff">Hufflepuff</a></li>   
+    <li><a href="#Ravenclaw">Ravenclaw</a></li>
+</ul>
+
+<!-- =============================== -->
+<!-- Fix: Get Colors From AI/ Mockup -->
+<!-- =============================== -->
+
+<section class="house-grid">    
+    <!-- [GRYFFINDOR CARD] -->
+    <section id="Gryffindor" data-color="hsl(352 21% 15%)" style="--color: hsl(352 21% 15%)">
+        <img src="Gryffindor-house-logo.jpg" alt="Logo For Gryffindor">
+        <p class="gold motto">HOUSE OF GOLD & SCARLET</p>
+        <h2>GRYFFINDOR</h2>
+        <q class="gold">Forti Animo Estote</q>
+        <ul class="qualities">
+            <li>BRAVERY</li>
+            <li>DARING</li>
+            <li>NERVE</li>
+            <li>CHIVALRY</li>
+        </ul>
+        <article class="element-ghost" aria-label="Element: Fire, Ghost: Nearly Headless Nick">
+            <p><span class="material-symbols-outlined" aria-hidden="true">local_fire_department</span>FIRE ELEMENT</p>
+            <p>NICK (GHOST)</p>
+        </article>
+
+        <article>
+            <h3>FOUNDING SOVEREIGN</h3>
+            <p><strong class="glow gold">Godric Gryffindor</strong>, wild-dueling master duelist and wielder of the ruby-pommelled Goblin-forged blade.</p>
+        </article>
+
+        <article>
+            <h3>SANCTUARY HAVEN</h3>
+            <p>Gryffindor Tower atop the seventh floor, guarded by the Fat Lady portrait with crackling hearth fires and deep velvet armchairs.</p>
+        </article>
+
+        <article>
+            <h3>RENOWNED CHAMPIONS</h3>
+            <p>Albus Dumbledore, Harry Potter, Minerva McGonagall, Hermione Granger.</p>
+        </article>
+
+        <article class="Quote">
+            <q class="gold">Where dwell the brave at heart, their daring, nerve, and chivalry set Gryffindors apart.</q>
+            <p><a href="">ENTER THE TOWER →</a></p>
+        </article>
+    </section>
+
+    <!-- [Slytherin House] -->
+    <section id="Slytherin" data-color="hsl(169 21% 15%)" style="--color: hsl(169 21% 15%)">
+        <img src="Slytherin-house-logo.jpg" alt="Logo For Slytherin">
+        <p class="gold motto">HOUSE OF EMERALD & SILVER</p>
+        <h2>SLYTHERIN</h2>
+        <q class="gold">Ad Astra Per Aspera</q>
+        <ul class="qualities">
+            <li>AMBITION</li>
+            <li>CUNNING</li>
+            <li>RESOURCEFUL</li>
+            <li>PRIDE</li>
+        </ul>
+        <article class="element-ghost" aria-label="Element: Water, Ghost: The Bloody Baron">
+            <p><span class="material-symbols-outlined" aria-hidden="true">water_drop</span>WATER ELEMENT</p>
+            <p>BARON (GHOST)</p>
+        </article>
+
+        <article>
+            <h3>FOUNDING SOVEREIGN</h3>
+            <p><strong class="glow gold">Salazar Slytherin</strong>, master of Legilimency, Parseltongue speaker, and architect of the deepest hidden vaults.</p>
+        </article>
+
+        <article>
+            <h3>SANCTUARY HAVEN</h3>
+            <p>Subterranean Dungeon catacombs beneath the Black Lake, glowing with emerald lanterns and carved skull sconces.</p>
+        </article>
+
+        <article>
+            <h3>RENOWNED CHAMPIONS</h3>
+            <p>Severus Snape, Merlin, Regulus Black, Horace Slughorn, Draco Malfoy, Tom Marvolo Riddle.</p>
+        </article>
+
+        <article class="Quote">
+            <q class="gold">Or yet in Slytherin you'll make your real friends, those cunning folk use any means to achieve their ends.</q>
+            <p><a href="">ENTER THE DUNGEONS →</a></p>
+        </article>
+    </section>
+
+    <!-- [Hufflepuff House] -->
+    <section id="Hufflepuff" data-color="hsl(35 15% 16%)" style="--color: hsl(35 15% 16%)">
+        <img src="Hufflepuff-house-logo.jpg" alt="Logo For Hufflepuff">
+        <p class="gold motto">HOUSE OF OCHRE & CHARCOAL</p>
+        <h2>HUFFLEPUFF</h2>
+        <q class="gold">Omnia Vincit Patientia</q>
+        <ul class="qualities">
+            <li>LOYALTY</li>
+            <li>FAIR PLAY</li>
+            <li>PATIENCE</li>
+            <li>KINDNESS</li>
+        </ul>
+        <article class="element-ghost" aria-label="Element: Earth, Ghost: The Fat Friar">
+            <p><span class="material-symbols-outlined" aria-hidden="true">spa</span>EARTH ELEMENT</p>
+            <p>FRIAR (GHOST)</p>
+        </article>
+
+        <article>
+            <h3>FOUNDING SOVEREIGN</h3>
+            <p><strong class="glow gold">Helga Hufflepuff</strong>, culinary conjurer, herbalist extraordinaire, and the champion of equal magical embrace.</p>
+        </article>
+
+        <article>
+            <h3>SANCTUARY HAVEN</h3>
+            <p>Earthy burrow basement by the Great Kitchens, entered by tapping &ldquo;Helga Hufflepuff&rdquo; rhythm upon vinegar barrels.</p>
+        </article>
+
+        <article>
+            <h3>RENOWNED CHAMPIONS</h3>
+            <p>Newt Scamander, Cedric Diggory, Nymphadora Tonks, Pomona Sprout.</p>
+        </article>
+
+        <article class="Quote">
+            <q class="gold">Where they are just and loyal, those patient Hufflepuffs are true, and unafraid of toil.</q>
+            <p><a href="">ENTER THE CELLARS →</a></p>
+        </article>
+    </section>
+
+    <!-- [Ravenclaw House] -->
+    <section id="Ravenclaw" data-color="hsl(224 32% 18%)" style="--color: hsl(224 32% 18%)">
+        <img src="Ravenclaw-house-logo.jpg" alt="Logo For Ravenclaw">
+        <p class="gold motto">HOUSE OF SAPPHIRE & BRONZE</p>
+        <h2>RAVENCLAW</h2>
+        <q class="gold">Sapientia Sine Fine</q>
+        <ul class="qualities">
+            <li>WISDOM</li>
+            <li>WIT</li>
+            <li>INTELLECT</li>
+            <li>ORIGINALITY</li>
+        </ul>
+        <article class="element-ghost" aria-label="Element: Air, Ghost: The Grey Lady">
+            <p><span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>AIR ELEMENT</p>
+            <p>GREY LADY (GHOST)</p>
+        </article>
+
+        <article>
+            <h3>FOUNDING SOVEREIGN</h3>
+            <p><strong class="glow gold">Rowena Ravenclaw</strong>, brilliant spellcraft innovator and crafter of the Diadem granting boundless intelligence.</p>
+        </article>
+
+        <article>
+            <h3>SANCTUARY HAVEN</h3>
+            <p>Ravenclaw High Turret, offering sweeping views of the mountains, accessed only by answering the Eagle Door Knocker's riddle.</p>
+        </article>
+
+        <article>
+            <h3>RENOWNED CHAMPIONS</h3>
+            <p>Luna Lovegood, Filius Flitwick, Garrick Ollivander, Cho Chang, Sybill Trelawney.</p>
+        </article>
+
+        <article class="Quote">
+            <q class="gold">Where those of wit and learning, will always find their kind. Wit beyond measure is man's greatest treasure.</q>
+            <p><a href="">ENTER THE TURRET →</a></p>
+        </article>
+    </section>
+</section>
+
+     <section class="registry" aria-labelledby="heading">
+        <div class="registry-system">
+          <span class="material-symbols-outlined">
+            memory
+          </span>
+            <h2 id="heading">
+              Scholastic Technical Registry
+            </h2>
+          </div> 
+            <p>
+              Hogwarts Sorting Logic • System Telemetry v9.4
+            </p>
+        
+        <ul class="registry-credits">
+          <li class="credit-adrish">
+            <strong>
+              Adrish:
+            </strong>
+            HTML, CSS, Pagination & Deployment
+          </li>
+          <li class="credit-shreyansh">
+            <strong>
+              Shreyansh:
+            </strong>
+            JavaScript, Hat Verdict Logic & Python Integration
+          </li>
+          <li class="credit-annesha">
+            <strong>
+              Annesha:
+            </strong>
+            MySQL Database & Python Server Architecture
+          </li>
+        </ul>
+      </section>
+
+      </main>
+      <footer>
+        <p class="kicker gold">
+          ✦  
+        </p>
+        <q class="gold" style="font-family:unset;">
+          Draco Dormiens Nunquam Titillandus
+        </q>
+      <p class="description">
+        Never Tickle a Sleeping Dragon&period; Preserving centuries of magical lineage&comma; scholastic pursuit and ancient arcane arts across Gryffindor&comma; Ravenclaw&comma; Hufflepuff and Slytherin
+      </p>
+    </footer>
+    </body>
+  </html>
