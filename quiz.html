@@ -24,18 +24,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Beau+Rivage&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
   
   <!-- 2. Ligatures / Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,psychology_alt,memory,east&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,psychology_alt,terminal,code,database,memory,east&display=swap" rel="stylesheet">
 
   <!-- my own CSS files -->
-  <link rel="stylesheet" href="base-style.css">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="animations.css">
+  <link rel="stylesheet" href="Base-style.css">
+  <link rel="stylesheet" href="Components.css">
+  <link rel="stylesheet" href="Layout.css">
+  <link rel="stylesheet" href="Animations.css">
 </head>
   <body>
     <header>
       <section role="banner" aria-label="Website Name">
         <a class="project-name" href="index.html">
-          Hogwarts
+          Sorticus
         </a>
         <p>
           School of witchcraft & wizardry
@@ -152,96 +153,81 @@
 <fieldset id="options-group">
   <legend>Choose one answer</legend>
 
-  <article class="option-card" data-house="gryffindor">
-    <input
+  <article class="option-card" data-house="gryffindor" data-text="A">
+    <label>
+      <input
       type="radio"
       name="sorting-answer"
-      id="opt-a"
       value="gryffindor"
       data-text="A"
-      onchange="selectOption(this.closest('article'), 'gryffindor', { bravery: 18, courage: 15, honor: 8 })"
-    >
-    <h2 class="option-head">
-      <label for="opt-a">
+      onchange="selectOption(this.closest('article'), 'gryffindor', { bravery: 18, courage: 15, honor: 8 })">
+      <span role="heading" aria-level="2">
         Draw your wand and step boldly into the line of fire to shield others.
-      </label>
-    </h2>
-    <p>
-      <label for="opt-a">
-        Hesitation breeds ruin. Valor requires immediate corporal sacrifice before collateral harm befalls the innocent.
-      </label>
-    </p>
+      </span>
+      <span role="paragraph" class="description">
+        Hesitation breeds ruin. Valor requires immediate corporal sacrifice before collateral harm befalls.
+      </span>
+    </label>
   </article>
 
-  <article class="option-card" data-house="slytherin">
+  <article class="option-card" data-house="slytherin" data-text="B">
+    <label>
     <input
       type="radio"
       name="sorting-answer"
-      id="opt-b"
       value="slytherin"
       data-text="B"
       onchange="selectOption(this.closest('article'), 'slytherin', { ambition: 18, cunning: 15, strategy: 10 })"
     >
-    <h2 class="option-head">
-      <label for="opt-b">
+      <span role="heading" aria-level="2">
         Assess the situation from the shadows, seeking the strategic flaw to turn the tide in your favor.
-      </label>
-    </h2>
-    <p>
-      <label for="opt-b">
-        Headlong heroics are folly. Power manifests through cunning repositioning and strikes delivered with lethal economy.
-      </label>
-    </p>
+      </span>
+      <span role="paragraph" class="description">
+        Headlong heroics are folly. Power manifests through cunning repositioning and sharpened wit and economy.
+      </span>
+    </label>
   </article>
 
-  <article class="option-card" data-house="hufflepuff">
-    <input
+  <article class="option-card" data-house="hufflepuff" data-text="C">
+    <label>
+      <input
       type="radio"
       name="sorting-answer"
-      id="opt-c"
       value="hufflepuff"
       data-text="C"
       onchange="selectOption(this.closest('article'), 'hufflepuff', { loyalty: 20, honor: 12, patience: 10 })"
     >
-    <h2 class="option-head">
-      <label for="opt-c">
+      <span role="heading" aria-level="2">
         Form an unbreakable circle with your companions, ensuring no one is left behind or forgotten.
-      </label>
-    </h2>
-    <p>
-      <label for="opt-c">
-        True resilience lies in solidarity. Individual glory crumbles; fidelity to your sworn brethren sustains through dark hours.
-      </label>
-    </p>
+      </span>
+      <span role="paragraph" class="description">
+        True resilience lies in solidarity. Individual glory crumbles; faith in brethren sustains through dark hours.
+      </span>
+    </label>
   </article>
 
-  <article class="option-card" data-house="ravenclaw">
-        
-    <input
+  <article class="option-card" data-house="ravenclaw" data-text="D">
+    <label>
+       <input
       type="radio"
       name="sorting-answer"
-      id="opt-d"
       value="ravenclaw"
       data-text="D"
       onchange="selectOption(this.closest('article'), 'ravenclaw', { wisdom: 18, wit: 14, intellect: 10 })"
     >
-    <h2 class="option-head">
-      <label for="opt-d">
-        Analyze the incantation or entity immediately, deducing the exact counter-curse required.
-      </label>
-    </h2>
-    
-    
-    <p>
-      <label for="opt-d">
-        Chaos yields to unyielding scholastic logic. Deconstruct the arcane mechanics before wasting precious vitality.
-      </label>
-    </p>
+      <span role="heading" aria-level="2">
+        Analyze the incantation or entity immediately, deducing the exact counter-curse.
+      </span>
+      <span role="paragraph" class="description">
+        Chaos yields to unyielding scholastic logic. Decipher arcane mechanics before wasting precious vitality.
+      </span>
+    </label>
   </article>
 
 </fieldset>
-        <div>
-          <em>
+
+        <div class="action-buttons">
+          <em class="description">
             Choice seals upon inscription
           </em>
           <button id="next-btn" type="button">
@@ -252,46 +238,41 @@
           </button>
         </div>
       </section>
-      <section class="registry" aria-labelledby="heading">
-        <div class="registry-system">
-          <span class="material-symbols-outlined">
-            memory
-          </span>
-            <h2 id="heading">
-              Scholastic Technical Registry
-            </h2>
-          </div> 
-            <p>
-              Hogwarts Sorting Logic • System Telemetry v9.4
-            </p>
-        
+      
+<section class="registry" aria-labelledby="heading">
+      <div class="registry-system">
+        <span class="material-symbols-outlined" aria-hidden="true">terminal</span> 
+        <h2 id="heading">Scholastic Technical Registry</h2>
+      </div> 
+      <p>Hogwarts Sorting Logic • System Telemetry v9.4</p>
         <ul class="registry-credits">
           <li class="credit-adrish">
             <strong>
+              <span class="material-symbols-outlined gold">
+                code
+              </span> 
               Adrish:
             </strong>
             HTML, CSS, Pagination & Deployment
           </li>
           <li class="credit-shreyansh">
             <strong>
+               <span class="material-symbols-outlined gold">
+                database
+              </span> 
               Shreyansh:
             </strong>
-            JavaScript, Hat Verdict Logic & Python Integration
-          </li>
-          <li class="credit-annesha">
-            <strong>
-              Annesha:
-            </strong>
-            MySQL Database & Python Server Architecture
+            JavaScript, Database
           </li>
         </ul>
-      </section>
+        </ul>
+    </section>
     </main>
     <footer>
         <p class="kicker gold">
           ✦  
         </p>
-        <q class="gold" style="font-family:unset;">
+        <q class="gold" style=" font-family:var(--font-playfair); ">
           Draco Dormiens Nunquam Titillandus
         </q>
       <p class="description">

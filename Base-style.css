@@ -1,0 +1,176 @@
+/* =====================================================
+   BASE STYLES
+   Theme tokens, resets, document defaults and global text/link styles.
+   ===================================================== */
+
+/* Color variables */
+:root {
+  --background: hsl(240 14% 9%);
+  --surface-container: hsl(240 11% 13%);
+  --surface-container-low: hsl(240 9% 12%);
+  --surface-container-lowest: hsl(240 18% 7%);
+  --surface-container-high: hsl(248 7% 17%);
+  --on-background: hsl(260 18% 90%);
+  --on-surface: hsl(260 18% 90%);
+  --on-surface-variant: hsl(35 24% 76%);
+  --primary: hsl(39 72% 69%);
+  --tertiary: hsl(156 36% 72%);
+  --primary-container: hsl(39 39% 57%);
+  --on-primary-container: hsl(41 100% 15%);
+  --outline: hsl(35 11% 55%);
+  --outline-variant: hsl(39 15% 27%);
+  
+  --on-error: hsl(357 100% 21%);
+  --on-error-container: hsl(6 100% 92%);
+
+  --on-valid: hsl(142 100% 21%);
+  --on-valid-container: hsl(142 70% 92%);
+  
+  /* ==== FONTS ==== */
+  --font-playfair: "Playfair Display", serif;
+  --font-garamond: "EB Garamond", Georgia, serif;
+  --font-astloch: "Astloch", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  --font-beau-rivage: "Beau Rivage", "Segoe Script", "Brush Script MT", "Lucida Handwriting", cursive;
+  
+  overflow-x:clip;
+  
+}
+
+
+
+/* === CSS RESETS === */
+*,*::before,*::after{
+    box-sizing:border-box;
+    line-height:1.6;
+}
+
+
+
+button{
+  border: none;
+  background-color: var(--surface-container);
+  
+  padding-inline: 0.5em;
+  padding-block: 0.5em;
+  
+  border-radius: 0.5em;
+  corner-shape: squircle;
+  
+  font-family:var(--font-garmond);
+}
+
+
+
+img{
+    display:inline-block;
+    max-inline-size:100%;
+    block-size:auto;
+    font-style:italic;
+    vertical-align:middle;
+    border-radius:20px;
+    corner-shape:squircle;
+}
+
+
+
+ul,ol{
+    list-style-type:none;
+}
+
+
+
+input{
+        border:none;
+        border-radius: 5px;
+}
+
+
+
+::selection{
+    background-color: var(--tertiary);
+    color: #fff;
+}
+
+
+html{
+    color-scheme:dark;
+    scroll-behavior:smooth;
+    scroll-padding-top:12vh;  
+}
+
+
+
+body{
+    margin:0;
+    background-color:var(--background);
+    color: var(--on-background);
+    min-block-size:100svb;
+}
+
+
+/* ===== HEADINGS ===== */
+h1 {
+  text-align: center;
+  font-family: var(--font-playfair);
+  font-variant: small-caps;
+}
+
+
+
+.kick-line{
+  text-align: center;
+  font-family: var(--font-garamond);
+  font-variant: small-caps;
+  font-size:clamp(0.8em, 0.13em + 2.09vw, 2em);
+  margin-inline:0.5em;
+}
+
+
+
+/* === ANCHOR LINKS === */
+a:not(.project-name):link, 
+a:not(.project-name):visited, 
+a:not(.project-name):hover, 
+a:not(.project-name):active {
+  text-decoration: none;
+  text-transform:uppercase;
+  text-align:center;
+  color: var(--on-surface-variant);
+  font-size: clamp(0.6em, 0.29em + 1.57vw, 1.5em);
+}
+
+
+
+a:not(.project-name):hover{
+    color: var(--on-primary-container);
+    background-color: hsl(from var(--primary-container) h calc(s + 10) calc(l + 5));
+}
+
+
+
+:where(.material-symbols-outlined:not(.next-question)){
+    color:var(--tertiary);
+    vertical-align:center;
+    text-shadow: 0 0 10px var(--tertiary);
+}
+
+
+
+a:not(.project-name)[aria-current="page"]{
+    background-color: hsl(from var(--primary-container) h calc(s + 20) calc(l + 10));
+    color: var(--on-primary-container);
+}
+
+
+
+.project-name{
+      text-decoration: none;
+      text-shadow:0 0 10px hsl(from var(--primary) h s l / 0.5);
+      font-style: normal;
+      font-variant: small-caps;
+      font-weight: bold;
+      font-size: clamp(1.15em, 0.68em + 1.48vw, 2em);
+      line-height: 1.6;
+      font-family: var(--font-playfair);
+      color:var(--primary);
+}

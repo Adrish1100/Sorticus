@@ -1,0 +1,196 @@
+/* =====================================================
+   ANIMATIONS & TRANSITIONS
+   Keyframes, view transitions, CSS-only carousel and animated
+   dialog states
+   ===================================================== */
+
+dialog {
+  opacity: 0;
+  translate: 0 -30px;
+  transition: opacity 0.5s, translate 1s, display 2s allow-discrete, overlay 0.3s allow-discrete;
+
+  &::backdrop {
+    backdrop-filter: blur(0px);
+    background: hsl(0 0% 0% / 0);
+    transition: backdrop-filter 0.5s, translate 1s, background 0.5s, display 1s allow-discrete, overlay 0.5s allow-discrete;
+  }
+}
+
+
+
+dialog[open] {
+  opacity: 1;
+  translate: 0 0;
+
+  &::backdrop {
+    backdrop-filter: blur(20px);
+    background: hsl(0 0% 0% / 0.5);
+    pointer-events:none;
+    &:hover{
+        cursor:not-allowed;
+    }
+  }
+
+  @starting-style {
+    opacity: 0;
+    translate: 0 -30px;
+
+    &::backdrop {
+      backdrop-filter: blur(0px);
+      background: hsl(0 0% 0% / 0);
+    }
+  }
+}
+
+
+@view-transition{
+    navigation:auto;
+    
+}
+
+
+
+::view-transition-group(page-content){
+    animation-duration:1s;
+}
+
+
+
+::view-transition-old(page-content){
+    animation-name:slide-out;
+}
+
+
+
+::view-transition-new(page-content){
+    animation-name:slide-in;
+}
+
+
+
+@keyframes slide-in{
+    from{
+        translate:100vw;
+    }
+    to{
+        translate:0;
+    }
+}
+
+
+
+main{
+    view-transition-name:page-content;
+}
+
+
+
+@keyframes slide-out{
+    to{
+        translate:-100vw;
+    }
+}
+
+
+@keyframes fade-in{ 
+    from{
+        opacity:0;
+        translate: 0 100%;
+    }
+    
+    to{
+        opacity:1;
+        translate: 0 0;
+    }
+}
+
+@keyframes glow-up{
+    from{
+         scale:1;
+        background-color: var(--surface-container-low);
+    }
+    to{
+        scale:1.1;
+        background-color:  hsl(from var(--primary) h s 45%);
+        background-image:
+        radial-gradient(at top left,
+        var(--surface-container-low) 20%,
+        hsl(from var(--primary) h s 45%) 70%);
+    }
+}
+
+.house-grid section{
+    animation-name: fade-in;
+    animation-duration:1.5s;
+    animation-timing-function:ease-in;
+    animation-delay: calc(sibling-index() * 1s);
+    animation-fill-mode:backwards;
+}
+
+section:where(:has(h2[class="gold"])) div {
+  anchor-name: --my-anchor;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-marker-group: after;
+  overscroll-behavior-x: contain;
+  scroll-behavior:smooth;
+  
+  &::scroll-button(left),
+  &::scroll-button(right){
+    content:'';
+    
+    position: absolute; 
+    position-anchor:--my-anchor;
+    
+    inline-size:2rem;
+    aspect-ratio:1;
+    
+    border:none;
+    border-radius:50%;
+    background-color: var(--surface-container-high);
+    
+    font-size:1rem;
+    font-weight:900;
+    color:hsl(from var(--primary) h s 50%);
+    text-shadow: 0 0 5px hsl(from var(--primary) h s 50%);
+  }
+  &::scroll-button(right){
+    content: '➢';
+    position-area:center right;
+    border-inline-end:1px solid hsl(from var(--primary) h s 50%);
+    border-block-start:1px solid hsl(from var(--primary) h s 50%);
+    
+    translate:-50% 0;
+  }
+  &::scroll-button(left){
+    content: '➢';
+    rotate:180deg;
+    position-area:center left;
+    border-inline-start:1px solid hsl(from var(--primary) h s 50%);
+    border-block-start:1px solid hsl(from var(--primary) h s 50%);
+    translate:50% 0;
+  }
+
+  &::scroll-marker-group{ 
+    padding-block-start:0.5em;      
+    display:flex;
+    gap:0.5ch;
+    justify-content:center;
+
+  }
+
+  & article::scroll-marker{
+    content:'';  
+    inline-size:1em;
+    block-size:1em;
+    aspect-ratio:1;
+    
+    border:1px solid hsl(from var(--primary) h s 50%);
+    background-color:var(--surface-container-high);
+    border-radius: 50%;
+    }
+   & article::scroll-marker:target-current{
+        background-color:hsl(from var(--primary) h s 50%);
+    }
+}

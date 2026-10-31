@@ -21,20 +21,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- 1. Text fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,memory&display=swap" rel="stylesheet">
-  
-  <!-- 2. Ligatures / Icons -->
-  <link q
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,terminal,database,code,memory&display=swap" rel="stylesheet">
 
   <!-- my own CSS files -->
-  <link rel="stylesheet" href="base-style.css">
-  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="Base-style.css">
+  <link rel="stylesheet" href="Components.css">
+  <link rel="stylesheet" href="Layout.css">
+  <link rel="stylesheet" href="Animations.css">
 </head>
   <body>
     <header>
     <section role="banner" aria-label="Website Name">  
       <a class="project-name" href="index.html">
-        Hogwarts
+        Sorticus
       </a>
       <p>School of witchcraft and wizardry</p>
       </section>
@@ -86,10 +85,6 @@
     <li><a href="#Ravenclaw">Ravenclaw</a></li>
 </ul>
 
-<!-- =============================== -->
-<!-- Fix: Get Colors From AI/ Mockup -->
-<!-- =============================== -->
-
 <section class="house-grid">    
     <!-- [GRYFFINDOR CARD] -->
     <section id="Gryffindor" data-color="hsl(352 21% 15%)" style="--color: hsl(352 21% 15%)">
@@ -127,6 +122,7 @@
             <q class="gold">Where dwell the brave at heart, their daring, nerve, and chivalry set Gryffindors apart.</q>
             <p><a href="">ENTER THE TOWER →</a></p>
         </article>
+        
     </section>
 
     <!-- [Slytherin House] -->
@@ -165,6 +161,10 @@
             <q class="gold">Or yet in Slytherin you'll make your real friends, those cunning folk use any means to achieve their ends.</q>
             <p><a href="">ENTER THE DUNGEONS →</a></p>
         </article>
+        <span class="decor"></span>
+        <span class="decor"></span>
+        <span class="decor"></span
+        <span class="decor"></span>
     </section>
 
     <!-- [Hufflepuff House] -->
@@ -203,6 +203,10 @@
             <q class="gold">Where they are just and loyal, those patient Hufflepuffs are true, and unafraid of toil.</q>
             <p><a href="">ENTER THE CELLARS →</a></p>
         </article>
+        <span class="decor"></span>
+        <span class="decor"></span>
+        <span class="decor"></span
+        <span class="decor"></span>
     </section>
 
     <!-- [Ravenclaw House] -->
@@ -241,50 +245,48 @@
             <q class="gold">Where those of wit and learning, will always find their kind. Wit beyond measure is man's greatest treasure.</q>
             <p><a href="">ENTER THE TURRET →</a></p>
         </article>
+        <span class="decor"></span>
+        <span class="decor"></span>
+        <span class="decor"></span
+        <span class="decor"></span>
     </section>
 </section>
 
      <section class="registry" aria-labelledby="heading">
-        <div class="registry-system">
-          <span class="material-symbols-outlined">
-            memory
-          </span>
-            <h2 id="heading">
-              Scholastic Technical Registry
-            </h2>
-          </div> 
-            <p>
-              Hogwarts Sorting Logic • System Telemetry v9.4
-            </p>
-        
+      <div class="registry-system">
+        <span class="material-symbols-outlined" aria-hidden="true">terminal</span> 
+        <h2 id="heading">Scholastic Technical Registry</h2>
+      </div> 
+      <p>Hogwarts Sorting Logic • System Telemetry v9.4</p>
         <ul class="registry-credits">
           <li class="credit-adrish">
             <strong>
+              <span class="material-symbols-outlined gold">
+                code
+              </span> 
               Adrish:
             </strong>
             HTML, CSS, Pagination & Deployment
           </li>
           <li class="credit-shreyansh">
             <strong>
+               <span class="material-symbols-outlined gold">
+                database
+              </span> 
               Shreyansh:
             </strong>
-            JavaScript, Hat Verdict Logic & Python Integration
-          </li>
-          <li class="credit-annesha">
-            <strong>
-              Annesha:
-            </strong>
-            MySQL Database & Python Server Architecture
+            JavaScript, Database
           </li>
         </ul>
-      </section>
+        </ul>
+    </section>
 
       </main>
       <footer>
         <p class="kicker gold">
           ✦  
         </p>
-        <q class="gold" style="font-family:unset;">
+        <q class="gold" style=" font-family:var(--font-playfair); ">
           Draco Dormiens Nunquam Titillandus
         </q>
       <p class="description">

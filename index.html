@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>sorticus</title>
+  <title>Sorticus</title>
   <meta name="description" content="sorticus - A minimal, aesthetic sorting visualizer and playground.">
   <meta name="author" content="sorticus">
   <meta name="color-scheme" content="dark light">
@@ -24,18 +24,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Beau+Rivage&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
   
   <!-- 2. Ligatures / Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,auto_fix_high,shield,memory&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,auto_fix_high,terminal,database,code,shield,memory&display=swap" rel="stylesheet">
 
   <!-- my own CSS files -->
-  <link rel="stylesheet" href="base-style.css">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="animations.css">
+  <link rel="stylesheet" href="Base-style.css">
+  <link rel="stylesheet" href="Components.css">
+  <link rel="stylesheet" href="Layout.css">
+  <link rel="stylesheet" href="Animations.css">
 </head>
   <body>
     <header>
     <section role="banner" aria-label="Website Name">  
       <a class="project-name" href="index.html">
-         Hogwarts
+         Sorticus
       </a>
       <p>School of witchcraft &amp; wizardry</p>
       </section>
@@ -79,13 +80,13 @@
       </h1>
       <p class="kick-line">
         Discover Your True House &mdash; Where Bravery&comma; Wisdom&comma; Loyalty &amp; Ambition Meet Their Calling
-      </>
+      </p>
       <figure>
-        <figcaption>
+              <img alt="Enchanted Sorting Hat Emblem" src="Hat-chequered.jpg"
+ width="300" height="300" >
+ <figcaption>
            The Hat Awakens
         </figcaption>
-                  <img alt="Enchanted Sorting Hat Emblem" src="Hat-chequered.jpg"
- width="300" height="300" />
       </figure>
       
 <section class="action-btns" aria-label="Getting started actions">
@@ -127,99 +128,111 @@
             
 <article class="gryffindor" data-color="hsl(0 100% 76.08% / 0.5)" style="--color: hsl(0 100% 76.08%)">
  <div class="top">
-<span class="trait">Courage • Chivalry</span>
+<p class="trait">Courage • Chivalry</p>
 <span class="material-symbols-outlined" aria-hidden="true">local_fire_department</span>
 </div>
   <h3>Gryffindor</h3>
   <p>Where dwell the brave at heart. Their daring, nerve, and chivalry set Gryffindors apart.</p>
-  <footer>Element <span class="element">Fire</span></footer>
+  <footer class="house-footer">Element <span class="element">Fire</span></footer>
 </article>
 
 <article class="ravenclaw" data-color="hsl(217.09 88.71% 75.69% / 0.5)" style="--color: hsl(217.09 88.71% 75.69%)">
   <div class="top">
-  <span class="trait">Wit • Wisdom</span>
+  <p class="trait">Wit • Wisdom</p>
   <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
 </div>
   <h3>Ravenclaw</h3>
   <p>For those of wit and learning, where those of true intellect will always find their kind.</p>
-  <footer>Element <span class="element">Air</span></footer>
+  <footer class="house-footer">Element <span class="element">Air</span></footer>
 </article>
 
 <article class="hufflpuff" data-color="hsl(33.74 100% 68.63% / 0.5)" style="--color: hsl(33.74 100% 68.63%)">
     <div class="top">
-  <span class="trait">Loyalty • Patience</span>
-  <span class="material-symbols-outlined" aria-hidden="true">spa</span>
+  <p class="trait">Loyalty • Patience</p>
+  <span class="material-symbols-outlined" aria-hidden="true">spa</spqn>
 </div>
   <h3>Hufflepuff</h3>
   <p>Where they are just and loyal, patient, true, and unfraid of diligent scholastic toil.</p>
-  <footer>Element <span class="element">Earth</span></footer>
+  <footer class="house-footer">Element <span class="element">Earth</span></footer>
 </article>
 
 <article class="slytherin" data-color="hsl(from var(--tertiary) h s l / 0.5)" style="--color: var(--tertiary)">
     <div class="top">
-  <span class="trait">Ambition • Cunning</span>
-  <span class="material-symbols-outlined" aria-hidden="true">water_drop</span>
+  <p class="trait">Ambition • Cunning</p>
+  <span class="material-symbols-outlined" aria-hidden="true">water_drop</dpan>
 </div>
   <h3>Slytherin</h3>
   <p>Here you will find real friends, whose cunning folk use any means to achieve their ends.</p>
-  <footer>Element <span class="element">Water</span></footer>
+  <footer class="house-footer">Element <span class="element">Water</span></footer>
 </article>
         </section>
         
      <section class="registry" aria-labelledby="heading">
-        <div class="registry-system">
-          <span class="material-symbols-outlined">
-            memory
-          </span>
-            <h2 id="heading">
-              Scholastic Technical Registry
-            </h2>
-          </div> 
-            <p>
-              Hogwarts Sorting Logic • System Telemetry v9.4
-            </p>
-        
+      <div class="registry-system">
+        <span class="material-symbols-outlined" aria-hidden="true">terminal</span> 
+        <h2 id="heading">Scholastic Technical Registry</h2>
+      </div> 
+      <p>Hogwarts Sorting Logic • System Telemetry v9.4</p>
         <ul class="registry-credits">
           <li class="credit-adrish">
             <strong>
+              <span class="material-symbols-outlined gold">
+                code
+              </span> 
               Adrish:
             </strong>
             HTML, CSS, Pagination & Deployment
           </li>
           <li class="credit-shreyansh">
             <strong>
+               <span class="material-symbols-outlined gold">
+                database
+              </span> 
               Shreyansh:
             </strong>
-            JavaScript, Hat Verdict Logic & Python Integration
-          </li>
-          <li class="credit-annesha">
-            <strong>
-              Annesha:
-            </strong>
-            MySQL Database & Python Server Architecture
+            JavaScript, Database
           </li>
         </ul>
-      </section>
-
+        </ul>
+    </section>
   </main>
 
 <dialog id="dialog-modal">
-        <h2>
-          Set Up Your Profile
+        <a href="index.html" class="project-name">
+          Sorticus
+        </a>
+        
+        <h2 class="kicker">
+            Sign Up
         </h2>
         <form method="post">
-<section aria-label="Form Fields">          
-    <div>
-              <label for="input-first-name">
+<section aria-label="Form Fields">
+        
+        <div>   
+         <label for="input-dob">
+            Date of Birth:
+          </label>
+          <input id="input-dob" name="dob" type="date" required>
+        </div>
+        
+        <div>   
+         <label for="input-first-name">
             First Name:
           </label>
           <input id="input-first-name" name="first-name" type="text" required pattern="[A-Za-z]+"placeholder="Adrish">
           </div>
           <div>
               <label for="input-last-name">
-            last Name:
+            Last Name:
           </label>
           <input id="input-last-name" name="last-name" type="text" required pattern="[A-Za-z]+" placeholder="Datta">
+          </div>
+          
+          <div>   
+         <label for="input-first-name">
+            Email: 
+          </label>
+          <input id="input-mail" name="mail" type="mail" required pattern="@[A-Za-z]+.com"placeholder="xxx@xx.com" autocomplete="mail">
           </div>
           </section>
           <section aria-label="Action buttons for The Form" class="form-buttons">
@@ -230,7 +243,7 @@
               Submit
           </button>
           
-          <button type="button" command="close" class="close-dialog" commandfor="dialog-modal">
+          <button type="button" command="close" class="close-dialog" commandfor="dialog-modal" autofocus>
             Close
           </button>
           </section>
@@ -241,7 +254,7 @@
         <p class="kicker gold">
           ✦  
         </p>
-        <q class="gold" style="font-family:unset;">
+        <q class="gold" style=" font-family:var(--font-playfair); ">
           Draco Dormiens Nunquam Titillandus
         </q>
       <p class="description">
