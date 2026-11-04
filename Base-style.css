@@ -87,8 +87,8 @@ input{
 
 
 ::selection{
-    background-color: var(--tertiary);
-    color: #fff;
+    background-color: var(--primary);
+    color: black;
 }
 
 
@@ -115,7 +115,13 @@ h1 {
   font-variant: small-caps;
 }
 
+is:(h1,h2,h3,h4,h5,h6){
+    word-spacing:1.5ch;
+}
 
+p:not(.house-section p){
+    text-wrap:balance;
+}
 
 .kick-line{
   text-align: center;
@@ -173,4 +179,22 @@ a:not(.project-name)[aria-current="page"]{
       line-height: 1.6;
       font-family: var(--font-playfair);
       color:var(--primary);
+}
+
+@property --spread{
+    syntax:'<length>';
+    inherits:false;
+    initial-value:0px;
+}
+
+@property --angle-val{
+    syntax:'<angle>';
+    inherits:false;
+    initial-value:0deg;
+}
+
+@supports (corner-shape: superellipse(infinity)) {
+    span.decoration{
+        display:block !important;
+    }
 }

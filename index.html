@@ -1,117 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Sorticus</title>
-  <meta name="description" content="sorticus - A minimal, aesthetic sorting visualizer and playground.">
-  <meta name="author" content="sorticus">
-  <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="hsl(262 83% 58%)">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="sorticus">
-  <meta property="og:description" content="A minimal, aesthetic sorting visualizer.">
-  <meta property="og:type" content="website">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- 1. Text fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Beau+Rivage&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- 2. Ligatures / Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,auto_fix_high,terminal,database,code,shield,memory&display=swap" rel="stylesheet">
-
-  <!-- my own CSS files -->
-  <link rel="stylesheet" href="Base-style.css">
-  <link rel="stylesheet" href="Components.css">
-  <link rel="stylesheet" href="Layout.css">
-  <link rel="stylesheet" href="Animations.css">
-</head>
-  <body>
-    <header>
-    <section role="banner" aria-label="Website Name">  
-      <a class="project-name" href="index.html">
-         Sorticus
-      </a>
-      <p>School of witchcraft &amp; wizardry</p>
-      </section>
-      <nav>
-        <ul>
-          <li>
-            <a aria-current="page" href="index.html">
-              welcome
-            </a>
-          </li>
-          <li>
-            <a href="houses.html">
-              the four Houses
-            </a>
-          </li>
-          <li>
-            <a href="quiz.html">
-              sorting ceremony
-            </a>
-          </li>
-          <li>
-            <a href="profile.html">
-              sorting result
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-<p class="kicker">
-              <span  class="material-symbols-outlined" aria-hidden="true">
-            auto_awesome
-          </span>
-              The Annual Ceremony of allocation
-              <span  class="material-symbols-outlined" aria-hidden="true">
-            auto_awesome
-          </span>
-            </p>
-      <h1>
-        Welcome To <span class="project-name">Hogwarts</span>
-      </h1>
-      <p class="kick-line">
-        Discover Your True House &mdash; Where Bravery&comma; Wisdom&comma; Loyalty &amp; Ambition Meet Their Calling
-      </p>
-      <figure>
-              <img alt="Enchanted Sorting Hat Emblem" src="Hat-chequered.jpg"
- width="300" height="300" >
- <figcaption>
-           The Hat Awakens
-        </figcaption>
-      </figure>
-      
-<section class="action-btns" aria-label="Getting started actions">
-  <button class="btn btn--primary" type="button" command="show-modal" commandfor="dialog-modal">
-    Set Up your profile
-  </button>
-
-  <button class="btn btn--accent" type="button">
-    <span class="material-symbols-outlined btn__icon btn__icon--quiz" aria-hidden="true">auto_fix_high</span>
-    Take the sorting quiz
-  </button>
-
-  <button class="btn btn--ghost" type="button">
-  <span class="material-symbols-outlined btn__icon btn__icon--quiz" aria-hidden="true">shield</span>  Explore the four houses
-  </button>
-</section>
-      <section aria-label="Quote of the Sorting Hat" class="gold">
-        <blockquote>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Sorticus - Find Your House
+    </title>
+    <meta name="description" content="sorticus - A minimal, aesthetic sorting visualizer and playground.">
+    <meta name="author" content="sorticus">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="hsl(262 83% 58%)">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:title" content="sorticus">
+    <meta property="og:description" content="A minimal, aesthetic sorting visualizer.">
+    <meta property="og:type" content="website">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 1. Text fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Beau+Rivage&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 2. Ligatures / Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,psychology_alt,terminal,code,memory,auto_fix_high,shield&display=swap" rel="stylesheet">
+    <!-- my own CSS files -->
+    <link rel="stylesheet" href="Base-style.css">
+    <link rel="stylesheet" href="Components.css">
+    <link rel="stylesheet" href="Layout.css">
+    <link rel="stylesheet" href="Animations.css">
+    <!-- my own JS files -->
+    <script src="Main.js" defer>
+    </script>
+    <body>
+      <header>
+        <section role="banner" aria-label="Website Name">
+          <a class="project-name" href="index.html">
+            Hogwarts
+          </a>
           <p>
-            There&apos;s nothing hidden in your head the Sorting Hat cannot see. So&comma; try me on and I will tell you where you ought to be&period;
+            School of witchcraft &amp; wizardry
           </p>
-        </blockquote>
+        </section>
+        <nav>
+          <ul>
+            <li>
+              <a aria-current="page" href="index.html">
+                welcome
+              </a>
+            </li>
+            <li>
+              <a href="houses.html">
+                the four Houses
+              </a>
+            </li>
+            <li>
+              <a href="quiz.html">
+                sorting ceremony
+              </a>
+            </li>
+            <li>
+              <a href="profile.html">
+                sorting result
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <p class="kicker">
+          <span  class="material-symbols-outlined" aria-hidden="true">
+            auto_awesome
+          </span>
+          The Annual Ceremony of allocation
+          <span  class="material-symbols-outlined" aria-hidden="true">
+            auto_awesome
+          </span>
+        </p>
+        <h1>
+          Welcome To
+          <span class="project-name">
+            Hogwarts
+          </span>
+        </h1>
+        <p class="kick-line">
+          Discover Your True House &mdash; Where Bravery&comma; Wisdom&comma; Loyalty &amp; Ambition Meet Their Calling
+        </p>
+        <figure>
+          <img alt="Enchanted Sorting Hat Emblem" src="Hat-chequered.jpg"
+ width="300" height="300" >
+          <figcaption>
+            The Hat Awakens
+          </figcaption>
+        </figure>
+        <section class="action-btns" aria-label="Getting started actions">
+          <button
+    id="setup-profile"
+    class="btn btn--primary"
+    type="button"
+    commandfor="dialog-modal"
+    command="show-modal"
+  >
+            Set Up your profile
+          </button>
+          <button
+    id="take-quiz"
+    class="btn btn--accent"
+    type="button"
+    disabled
+  >
+            <span class="material-symbols-outlined btn__icon btn__icon--quiz" aria-hidden="true">
+              auto_fix_high
+            </span>
+            Take the sorting quiz
+          </button>
+          <button
+    id="explore-houses"
+    class="btn btn--ghost"
+    type="button"
+    disabled
+  >
+            <span class="material-symbols-outlined btn__icon btn__icon--quiz" aria-hidden="true">
+              shield
+            </span>
+            Explore the four houses
+          </button>
+        </section>
+        <section aria-label="Quote of the Sorting Hat" class="gold">
+          <blockquote>
+            <p>
+              There&apos;s nothing hidden in your head the Sorting Hat cannot see. So&comma; try me on and I will tell you where you ought to be&period;
+            </p>
+          </blockquote>
           <p class="description">
             <cite>
-              &mdash; THE SORTING HAT&apos;S SONG&period; FEAST OF <time datetime="1991">1991</time> &mdash;
+              &mdash; THE SORTING HAT&apos;S SONG&period; FEAST OF
+              <time datetime="1991">
+                1991
+              </time>
+              &mdash;
             </cite>
           </p>
         </section>
@@ -122,144 +147,775 @@
           <h2 id="heading-sacred-house">
             The Four Sacred Houses
           </h2>
-            <p class="sacred-house-desc">
-              Each house carries its own grand lore crest and noble lineage founded by the gratest witches and wizards of their age&period;
-            </p>     
-            
-<article class="gryffindor" data-color="hsl(0 100% 76.08% / 0.5)" style="--color: hsl(0 100% 76.08%)">
- <div class="top">
-<p class="trait">Courage • Chivalry</p>
-<span class="material-symbols-outlined" aria-hidden="true">local_fire_department</span>
-</div>
-  <h3>Gryffindor</h3>
-  <p>Where dwell the brave at heart. Their daring, nerve, and chivalry set Gryffindors apart.</p>
-  <footer class="house-footer">Element <span class="element">Fire</span></footer>
-</article>
-
-<article class="ravenclaw" data-color="hsl(217.09 88.71% 75.69% / 0.5)" style="--color: hsl(217.09 88.71% 75.69%)">
-  <div class="top">
-  <p class="trait">Wit • Wisdom</p>
-  <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
-</div>
-  <h3>Ravenclaw</h3>
-  <p>For those of wit and learning, where those of true intellect will always find their kind.</p>
-  <footer class="house-footer">Element <span class="element">Air</span></footer>
-</article>
-
-<article class="hufflpuff" data-color="hsl(33.74 100% 68.63% / 0.5)" style="--color: hsl(33.74 100% 68.63%)">
-    <div class="top">
-  <p class="trait">Loyalty • Patience</p>
-  <span class="material-symbols-outlined" aria-hidden="true">spa</spqn>
-</div>
-  <h3>Hufflepuff</h3>
-  <p>Where they are just and loyal, patient, true, and unfraid of diligent scholastic toil.</p>
-  <footer class="house-footer">Element <span class="element">Earth</span></footer>
-</article>
-
-<article class="slytherin" data-color="hsl(from var(--tertiary) h s l / 0.5)" style="--color: var(--tertiary)">
-    <div class="top">
-  <p class="trait">Ambition • Cunning</p>
-  <span class="material-symbols-outlined" aria-hidden="true">water_drop</dpan>
-</div>
-  <h3>Slytherin</h3>
-  <p>Here you will find real friends, whose cunning folk use any means to achieve their ends.</p>
-  <footer class="house-footer">Element <span class="element">Water</span></footer>
-</article>
+          <p class="sacred-house-desc">
+            Each house carries its own grand lore crest and noble lineage founded by the gratest witches and wizards of their age&period;
+          </p>
+          <article class="gryffindor" data-color="hsl(0 100% 76.08% / 0.5)" style="--color: hsl(0 100% 76.08%)">
+            <div class="top">
+              <p class="trait">
+                Courage • Chivalry
+              </p>
+              <span class="material-symbols-outlined" aria-hidden="true">
+                local_fire_department
+              </span>
+            </div>
+            <h3>
+              Gryffindor
+            </h3>
+            <p>
+              Where dwell the brave at heart. Their daring, nerve, and chivalry set Gryffindors apart.
+            </p>
+            <footer class="house-footer">
+              Element
+              <span class="element">
+                Fire
+              </span>
+            </footer>
+          </article>
+          <article class="ravenclaw" data-color="hsl(217.09 88.71% 75.69% / 0.5)" style="--color: hsl(217.09 88.71% 75.69%)">
+            <div class="top">
+              <p class="trait">
+                Wit • Wisdom
+              </p>
+              <span class="material-symbols-outlined" aria-hidden="true">
+                auto_awesome
+              </span>
+            </div>
+            <h3>
+              Ravenclaw
+            </h3>
+            <p>
+              For those of wit and learning, where those of true intellect will always find their kind.
+            </p>
+            <footer class="house-footer">
+              Element
+              <span class="element">
+                Air
+              </span>
+            </footer>
+          </article>
+          <article class="hufflpuff" data-color="hsl(33.74 100% 68.63% / 0.5)" style="--color: hsl(33.74 100% 68.63%)">
+            <div class="top">
+              <p class="trait">
+                Loyalty • Patience
+              </p>
+              <span class="material-symbols-outlined" aria-hidden="true">
+                spa
+              </spqn>
+            </div>
+            <h3>
+              Hufflepuff
+            </h3>
+            <p>
+              Where they are just and loyal, patient, true, and unfraid of diligent scholastic toil.
+            </p>
+            <footer class="house-footer">
+              Element
+              <span class="element">
+                Earth
+              </span>
+            </footer>
+          </article>
+          <article class="slytherin" data-color="hsl(from var(--tertiary) h s l / 0.5)" style="--color: var(--tertiary)">
+            <div class="top">
+              <p class="trait">
+                Ambition • Cunning
+              </p>
+              <span class="material-symbols-outlined" aria-hidden="true">
+                water_drop
+              </dpan>
+            </div>
+            <h3>
+              Slytherin
+            </h3>
+            <p>
+              Here you will find real friends, whose cunning folk use any means to achieve their ends.
+            </p>
+            <footer class="house-footer">
+              Element
+              <span class="element">
+                Water
+              </span>
+            </footer>
+          </article>
         </section>
-        
-     <section class="registry" aria-labelledby="heading">
-      <div class="registry-system">
-        <span class="material-symbols-outlined" aria-hidden="true">terminal</span> 
-        <h2 id="heading">Scholastic Technical Registry</h2>
-      </div> 
-      <p>Hogwarts Sorting Logic • System Telemetry v9.4</p>
-        <ul class="registry-credits">
-          <li class="credit-adrish">
-            <strong>
-              <span class="material-symbols-outlined gold">
-                code
-              </span> 
-              Adrish:
-            </strong>
-            HTML, CSS, Pagination & Deployment
-          </li>
-          <li class="credit-shreyansh">
-            <strong>
-               <span class="material-symbols-outlined gold">
-                database
-              </span> 
-              Shreyansh:
-            </strong>
-            JavaScript, Database
-          </li>
+        <section class="lore">
+          <h2>
+            Lore
+          </h2>
+          <article>
+            <h3>
+              FOUNDATION (c. 990 A.D.)
+            </h3>
+            <p>
+              Hogwarts was founded by the four greatest witches and wizards of the age -
+              <strong>
+                Godric Gryffindor
+              </strong>
+              ,
+              <strong>
+                Helga Hufflepuff
+              </strong>
+              ,
+              <strong>
+                Rowena Ravenclaw
+              </strong>
+              and
+              <strong>
+                Salazar Slytherin
+              </strong>
+              .
+            </p>
+            <p>
+              Rowena chose the location after dreaming of a warty hog leading her to a cliff by a lake, hence the name Hogwarts. The founders found a
+              <b>
+                Pensieve
+              </b>
+              buried there and sealed the castle with
+              <b>
+                Unplottable charms
+              </b>
+              .
+            </p>
+          </article>
+          <article>
+            <h3>
+              THE SLYTHERIN SCHISM
+            </h3>
+            <p>
+              Soon after, Slytherin fell out with the others. He wanted to teach
+              <b>
+                Dark Arts
+              </b>
+              and admit only pure-bloods.
+            </p>
+            <p>
+              Slytherin left Hogwarts, but not before building the
+              <strong>
+                Chamber of Secrets
+              </strong>
+              deep underground. He sealed
+              <b>
+                basilisk
+              </b>
+              inside, enchanted so only his true
+              <b>
+                heir
+              </b>
+              could open it.
+            </p>
+          </article>
+          <article>
+            <h3>
+              MIDDLE AGES (11th - 18th Century)
+            </h3>
+            <p>
+              In the 13th century,
+              <b>
+                Floo Powder
+              </b>
+              was invented, but Hogwarts Heads refused to connect its fireplaces to the
+              <b>
+                Floo Network
+              </b>
+              . Around
+              <time datetime="1294">
+                1294
+              </time>
+              , the
+              <strong>
+                Triwizard Tournament
+              </strong>
+              was started.
+            </p>
+            <p>
+              In the 18th century when plumbing was added,
+              <strong>
+                Corvinus Gaunt
+              </strong>
+              hid the Chamber entrance behind sinks in the
+              <b>
+                second-floor girls' bathroom
+              </b>
+              .
+            </p>
+          </article>
+          <article>
+            <h3>
+              THE KEEPERS & ANCIENT MAGIC (1800s)
+            </h3>
+            <p>
+              In the Tudor era, four professors formed The
+              <b>
+                Keepers
+              </b>
+              to hide a
+              <b>
+                rare ancient magic
+              </b>
+              . They mentored
+              <strong>
+                Isidora Morganach
+              </strong>
+              .
+            </p>
+            <p>
+              <strong>
+                Isidora
+              </strong>
+              turned dark. She started extracting pain and emotions from others to store in
+              <b>
+                repositories
+              </b>
+              .
+            </p>
+            <p>
+              In
+              <time datetime="1890">
+                1890
+              </time>
+              -
+              <time datetime="1891">
+                1891
+              </time>
+              , another fifth-year arrived. He faced a goblin,
+              <strong>
+                Ranrok
+              </strong>
+              , and his ally
+              <strong>
+                Victor Rookwood
+              </strong>
+              . After defeating both in the
+              <b>
+                Keepers' Caverns
+              </b>
+              , his mentor
+              <strong>
+                Professor Fig
+              </strong>
+              died.
+            </p>
+          </article>
+          <article>
+            <h3>
+              THE CURSED VAULTS ERA (1980s)
+            </h3>
+            <p>
+              The castle also hid
+              <b>
+                Cursed Vaults
+              </b>
+              , older than Hogwarts itself. Student
+              <strong>
+                Jacob
+              </strong>
+              obsessed over them and accidentally unleashed a curse that froze the whole castle.
+            </p>
+            <p>
+              In
+              <time datetime="1984">
+                1984
+              </time>
+              , Jacob's younger sibling enrolled and broke into
+              <b>
+                all five vaults
+              </b>
+              . A secret org called
+              <b>
+                R
+              </b>
+              was also hunting them. Defence Professor
+              <strong>
+                 Patricia Rakepick
+              </strong>
+              pretended to help but was actually from
+              <b>
+                R
+              </b>
+              . She murdered
+              <strong>
+                Rowan Khanna
+              </strong>
+              . The students formed the
+              <b>
+                Circle of Khanna
+              </b>
+              and found the final vault under the
+              <strong>
+                Black Lake
+              </strong>
+              .
+            </p>
+          </article>
+          <article>
+            <h3>
+              20TH CENTURY - BEFORE HARRY
+            </h3>
+            <p>
+              In the 1910s,
+              <strong>
+                Leta Lestrange
+              </strong>
+              was bullied and befriended
+              <strong>
+                Newt Scamander
+              </strong>
+              . In 1926, during
+              <b>
+                Grindelwald's War
+              </b>
+              , security was increased under
+              <strong>
+                Headmaster Dippet
+              </strong>
+              .
+            </p>
+            <p>
+              The Chamber was first opened in
+              <time datetime="1942">
+                1942
+              </time>
+              by
+              <strong>
+                Tom Riddle
+              </strong>
+              .
+              <strong>
+                Myrtle Warren
+              </strong>
+              was killed, and Riddle framed
+              <strong>
+                Hagrid
+              </strong>
+              , leaving his
+              <b>
+                diary Horcrux
+              </b>
+              behind.
+            </p>
+            <p>
+              In the 1970s,
+              <strong>
+                James Potter
+              </strong>
+              ,
+              <strong>
+                Sirius Black
+              </strong>
+              ,
+              <strong>
+                Remus Lupin
+              </strong>
+              and
+              <strong>
+                Lily Evans
+              </strong>
+              attended. The
+              <b>
+                Marauders
+              </b>
+              were infamous. They graduated in 1978 as the
+              <b>
+                First Wizarding War
+              </b>
+              raged.
+            </p>
+          </article>
+          <section>
+            <h3>
+              THE HARRY POTTER ERA (
+              <time datetime="1991">
+                1991
+              </time>
+              -
+              <time datetime="1998">
+                1998
+              </time>
+              )
+            </h3>
+            <dl>
+              <dt>
+                <time datetime="1991/1992">
+                  Philosopher's Stone (1991-92)
+                </time>
+              </dt>
+              <dd>
+                Harry started Hogwarts. The
+                <b>
+                  Stone
+                </b>
+                was hidden in the
+                <b>
+                  Underground Chambers
+                </b>
+                . Defence Professor
+                <strong>
+                  Quirrell
+                </strong>
+                , possessed by
+                <strong>
+                  Voldemort
+                </strong>
+                , tried to steal it. Harry,
+                <strong>
+                  Ron
+                </strong>
+                and
+                <strong>
+                  Hermione
+                </strong>
+                stopped him - Quirrell couldn't touch Harry due to
+                <strong>
+                  Lily's
+                </strong>
+                love protection.
+              </dd>
+              <dt>
+                <time datetime="1992/1993">
+                  Chamber of Secrets (1992-93)
+                </time>
+              </dt>
+              <dd>
+                <strong>
+                  Lucius Malfoy
+                </strong>
+                slipped
+                <b>
+                  Riddle's diary
+                </b>
+                into
+                <strong>
+                  Ginny Weasley
+                </strong>
+                's books. Possessed, she reopened the Chamber, leaving blood messages. Students were
+                <b>
+                  Petrified
+                </b>
+                by the basilisk. Harry destroyed the diary and killed the basilisk with
+                <b>
+                  Gryffindor's Sword
+                </b>
+                , clearing
+                <strong>
+                  Hagrid
+                </strong>
+                .
+              </dd>
+              <dt>
+                <time datetime="1993/1994">
+                  Prisoner of Azkaban (1993-94)
+                </time>
+              </dt>
+              <dd>
+                <strong>
+                  Sirius Black
+                </strong>
+                escaped Azkaban after 12 years.
+                <b>
+                  Dementors
+                </b>
+                guarded the school. He broke in twice, slashing the
+                <b>
+                  Fat Lady's portrait
+                </b>
+                . In the
+                <b>
+                  Shrieking Shack
+                </b>
+                , truth came out - Ron's rat Scabbers was
+                <strong>
+                  Peter Pettigrew
+                </strong>
+                , who betrayed the Potters. With a
+                <b>
+                  Time-Turner
+                </b>
+                , Harry and Hermione saved Sirius and
+                <b>
+                  Buckbeak
+                </b>
+                .
+              </dd>
+              <dt>
+                <time datetime="1994/1995">
+                  Goblet of Fire (1994-95)
+                </time>
+              </dt>
+              <dd>
+                <b>
+                  Triwizard Tournament
+                </b>
+                revived.
+                <strong>
+                  Barty Crouch Jr
+                </strong>
+                disguised as
+                <strong>
+                  Mad-Eye Moody
+                </strong>
+                entered Harry's name. Harry competed, reached the Cup
+                <b>
+                  Portkey
+                </b>
+                with
+                <strong>
+                  Cedric Diggory
+                </strong>
+                . In Little Hangleton graveyard, Cedric was killed by
+                <strong>
+                  Wormtail
+                </strong>
+                and Voldemort returned using Harry's blood. Dumbledore reformed the
+                <b>
+                  Order
+                </b>
+                ,
+                <strong>
+                  Fudge
+                </strong>
+                denied it.
+              </dd>
+              <dt>
+                <time datetime="1995/1996">
+                  Order of the Phoenix (1995-96)
+                </time>
+              </dt>
+              <dd>
+                Ministry took over via
+                <b>
+                  Educational Decrees
+                </b>
+                .
+                <strong>
+                  Dolores Umbridge
+                </strong>
+                became
+                <b>
+                  High Inquisitor
+                </b>
+                and Headmistress, banning practical magic. Harry, Ron and Hermione formed
+                <b>
+                  Dumbledore's Army
+                </b>
+                . Umbridge was overthrown by centaurs in the
+                <b>
+                  Forbidden Forest
+                </b>
+                and the Ministry finally accepted Voldemort's return.
+              </dd>
+              <dt>
+                <time datetime="1996/1997">
+                  Half-Blood Prince (1996-97)
+                </time>
+              </dt>
+              <dd>
+                <b>
+                  Aurors
+                </b>
+                guarded the castle. Families took students home out of fear.
+                <strong>
+                  Draco Malfoy
+                </strong>
+                was forced to kill Dumbledore. After two failed attempts that hurt
+                <strong>
+                  Katie Bell
+                </strong>
+                and Ron, he let Death Eaters in via
+                <b>
+                  Vanishing Cabinets
+                </b>
+                .
+                <strong>
+                  Snape
+                </strong>
+                killed Dumbledore on the
+                <b>
+                  Astronomy Tower
+                </b>
+                in a pre-arranged plan.
+              </dd>
+              <dt>
+                <time datetime="1997/1998">
+                  Deathly Hallows & Battle of Hogwarts (1997-98)
+                </time>
+              </dt>
+              <dd>
+                With the Ministry fallen, attendance became mandatory to identify Muggle-borns.
+                <strong>
+                  Snape
+                </strong>
+                was Headmaster, the
+                <strong>
+                  Carrows
+                </strong>
+                taught
+                <b>
+                  Dark Arts
+                </b>
+                and anti-Muggle propaganda, though Snape secretly protected students. On
+                <time datetime="1998-05-02">
+                  May 2, 1998
+                </time>
+                ,
+                <strong>
+                  Voldemort
+                </strong>
+                attacked. Staff, students, Order and parents defended the castle. It was heavily damaged - marble staircase blown, Quidditch pitch burned. Harry died temporarily and returned to kill Voldemort in the
+                <b>
+                  Great Hall
+                </b>
+                , ending the war.
+              </dd>
+              <dt>
+                AFTERMATH
+              </dt>
+              <dd>
+                Hogwarts was repaired and
+                <strong>
+                  McGonagall
+                </strong>
+                became permanent Headmistress.
+                <strong>
+                  Hermione
+                </strong>
+                and others returned to finish their NEWTs. In the 2010s there were smaller incidents - professors using
+                <b>
+                  Imperius Curse
+                </b>
+                to find treasures like the
+                <b>
+                  Crown of Courage
+                </b>
+                , and a Dementor siege that McGonagall blocked with a shield.
+                <br>
+                <br>
+                By
+                <time datetime="2017">
+                  2017
+                </time>
+                , a new generation arrived -
+                <strong>
+                  Albus Potter
+                </strong>
+                ,
+                <strong>
+                  Scorpius Malfoy
+                </strong>
+                and
+                <strong>
+                  Rose Weasley
+                </strong>
+                . In
+                <time datetime="2020">
+                  2020
+                </time>
+                , Albus and Scorpius used an illegal
+                <b>
+                  Time-Turner
+                </b>
+                and created alternate timelines where Voldemort won and
+                <strong>
+                  Umbridge
+                </strong>
+                was Headmistress, before fixing the timeline.
+              </dd>
+            </dl>
+          </section>
+        </section>
+        <section class="registry" aria-labelledby="heading">
+          <div class="registry-system">
+            <span class="material-symbols-outlined" aria-hidden="true">
+              terminal
+            </span>
+            <h2 id="heading">
+              Scholastic Technical Registry
+            </h2>
+          </div>
+          <p>
+            Hogwarts Sorting Logic • System Telemetry v9.4
+          </p>
+          <ul class="registry-credits">
+            <li class="credit-adrish">
+              <strong>
+                <span class="material-symbols-outlined gold">
+                  code
+                </span>
+                Adrish:
+              </strong>
+              HTML, CSS, Pagination & Deployment
+            </li>
+          </ul>
         </ul>
-        </ul>
-    </section>
-  </main>
-
-<dialog id="dialog-modal">
-        <a href="index.html" class="project-name">
-          Sorticus
-        </a>
-        
-        <h2 class="kicker">
-            Sign Up
-        </h2>
-        <form method="post">
-<section aria-label="Form Fields">
-        
-        <div>   
-         <label for="input-dob">
-            Date of Birth:
-          </label>
-          <input id="input-dob" name="dob" type="date" required>
-        </div>
-        
-        <div>   
-         <label for="input-first-name">
-            First Name:
-          </label>
-          <input id="input-first-name" name="first-name" type="text" required pattern="[A-Za-z]+"placeholder="Adrish">
+      </section>
+    </main>
+    <dialog id="dialog-modal">
+      <span class="decoration">
+      </span>
+      <span class="decoration">
+      </span>
+      <span class="decoration">
+      </span>
+      <span class="decoration">
+      </span>
+      <a href="index.html" class="project-name">
+        Sorticus
+      </a>
+      <h2 class="kicker">
+        Sign Up
+      </h2>
+      <form method="post">
+        <section aria-label="Form Fields">
+          <div>
+            <label for="input-dob">
+              Date of Birth:
+            </label>
+            <input id="input-dob" name="dob" type="date" required>
           </div>
           <div>
-              <label for="input-last-name">
-            Last Name:
-          </label>
-          <input id="input-last-name" name="last-name" type="text" required pattern="[A-Za-z]+" placeholder="Datta">
+            <label for="input-first-name">
+              First Name:
+            </label>
+            <input id="input-first-name" name="first-name" type="text" required pattern="[A-Za-z]+"placeholder="Adrish">
           </div>
-          
-          <div>   
-         <label for="input-first-name">
-            Email: 
-          </label>
-          <input id="input-mail" name="mail" type="mail" required pattern="@[A-Za-z]+.com"placeholder="xxx@xx.com" autocomplete="mail">
+          <div>
+            <label for="input-last-name">
+              Last Name:
+            </label>
+            <input id="input-last-name" name="last-name" type="text" required pattern="[A-Za-z]+" placeholder="Datta">
           </div>
-          </section>
-          <section aria-label="Action buttons for The Form" class="form-buttons">
-              <button type="reset">
+          <div>
+            <label for="input-mail">
+              Email:
+            </label>
+            <input id="input-mail" name="mail" type="email" required placeholder="xxx@xx.com" autocomplete="email">
+          </div>
+        </section>
+        <section aria-label="Action buttons for The Form" class="form-buttons">
+          <button type="reset">
             Reset
           </button>
           <button type="submit">
-              Submit
+            Submit
           </button>
-          
           <button type="button" command="close" class="close-dialog" commandfor="dialog-modal" autofocus>
             Close
           </button>
-          </section>
-        </form>
-      </dialog>
-      
-  <footer>
-        <p class="kicker gold">
-          ✦  
-        </p>
-        <q class="gold" style=" font-family:var(--font-playfair); ">
-          Draco Dormiens Nunquam Titillandus
-        </q>
+        </section>
+      </form>
+    </dialog>
+    <footer>
+      <p class="kicker gold">
+        ✦
+      </p>
+      <q class="gold" style=" font-family:var(--font-playfair); ">
+        Draco Dormiens Nunquam Titillandus
+      </q>
       <p class="description">
         Never Tickle a Sleeping Dragon&period; Preserving centuries of magical lineage&comma; scholastic pursuit and ancient arcane arts across Gryffindor&comma; Ravenclaw&comma; Hufflepuff and Slytherin
       </p>
     </footer>
-    </body>
-  </html>
+    <audio id="theme" src="Harry-Potter-Hedwig-theme.mp3" loop preload="auto">
+    </audio>
+  </body>
+</html>

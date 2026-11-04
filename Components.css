@@ -60,7 +60,9 @@ nav ul li a{
     min-block-size:100%;
     padding-block:0.5em;
     border-radius: 10px;
-    corner-shape:squircle; 
+    corner-shape:squircle;
+    
+    font-family:var(--font-garamond);
 }
 
 nav ul li{
@@ -200,44 +202,44 @@ q{
     font-family:var(--font-astloch);
 }
 /* === DECOR === */
-
-.house-grid section{
-    position:relative;      
+.decoration{
+    z-index:-1;
+    position:absolute;
+    background-color:white;
+    border-radius: 100%;
+    display:none;
+    inline-size: clamp(1rem,5vw,4rem);
+    block-size:clamp(1rem,5vw,4rem);
+    
+    &:nth-child(1){
+        position-anchor:--sort-anchor;
+        position-area:center left;
+        translate: 150% 50%;
+    }
+    
+    &:nth-child(2){        
+        position-anchor:--sort-anchor;
+        position-area:center right;
+        translate: -150% 50%;
+    }
+    
+     &:nth-child(3){
+        inset: auto 20svi 55svi auto;
+    }
+    
+     &:nth-child(4){
+        inset: auto auto 50svi 25svi ;
+    }
 }
 
-.decor{
-  position:absolute;
-  width:1em;
-  height:1em;
-  --_b: 2px solid hsl(from var(--outline) h s l / 0.6);
-}
-
-.decor:nth-of-type(1){
-  inset:1em auto auto .5em;
-  border-block-start:var(--_b);
-  border-inline-start:var(--_b);
-}
-.decor:nth-of-type(2){
-  inset:1em .5em auto auto;
-  border-block-start:var(--_b);
-  border-inline-end:var(--_b);
-}
-.decor:nth-of-type(3){
-  inset:auto .5em .5em auto;
-  border-block-end:var(--_b);
-  border-inline-end:var(--_b);
-}
-.decor:nth-of-type(4){
-  inset:auto auto .5em 1em;
-  border-block-end:var(--_b);
-  border-inline-start:var(--_b);
-}
 
 
 /* == CREDITS == */
 .registry{
+
     inline-size:clamp(15em,75svi,30em);
     
+    margin-block-start:1lh;
     margin-inline:auto;
     padding-inline:0;
     padding-block:0.5em;
@@ -283,10 +285,9 @@ q{
 ul.registry-credits{
     display:grid;
     place-content:center;
-    place-items: center;
-    grid-template-rows:1fr 1fr;
-    
+    place-items: center; 
     gap:1ch;
+    
     padding:0;
     margin:0;
     
@@ -332,6 +333,7 @@ dialog{
         display:block;
         text-align:center;
         font-size: clamp(1.175rem, 1.5056rem + 10vw, 6rem);
+        anchor-name:--sort-anchor;
     }
     
     .kicker{ 
@@ -370,7 +372,7 @@ dialog section > div{
     inline-size:75svw;
     max-inline-size:800px;
     gap:0.2em;
-    
+    isolation:isolate;
     label{
         font-family:var(--font-garamond);
         font-weight:bold;
@@ -558,6 +560,12 @@ figure{
     justify-content:center;
     align-content:center;
     gap:1em;
+    
+    anchor-scope:--tooltip-anchor;
+}
+
+.btn{
+    anchor-name:--tooltip-anchor;
 }
 
 

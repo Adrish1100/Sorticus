@@ -48,25 +48,21 @@ dialog[open] {
     
 }
 
-
+main{
+    view-transition-name:page-content;
+}
 
 ::view-transition-group(page-content){
     animation-duration:1s;
 }
 
-
-
 ::view-transition-old(page-content){
     animation-name:slide-out;
 }
 
-
-
 ::view-transition-new(page-content){
     animation-name:slide-in;
 }
-
-
 
 @keyframes slide-in{
     from{
@@ -76,14 +72,6 @@ dialog[open] {
         translate:0;
     }
 }
-
-
-
-main{
-    view-transition-name:page-content;
-}
-
-
 
 @keyframes slide-out{
     to{
@@ -104,26 +92,44 @@ main{
     }
 }
 
-@keyframes glow-up{
+@keyframes animating-borders{
     from{
-         scale:1;
-        background-color: var(--surface-container-low);
+        --angle-val:0deg;
     }
+    
     to{
-        scale:1.1;
-        background-color:  hsl(from var(--primary) h s 45%);
-        background-image:
-        radial-gradient(at top left,
-        var(--surface-container-low) 20%,
-        hsl(from var(--primary) h s 45%) 70%);
+        --angle-val:360deg;
     }
+}
+
+@keyframes decor-animation{
+    from{
+        --spread: 0;
+        corner-shape:superellipse(-infinity);
+        box-shadow:0 0 var(--spread) white;
+    }
+    
+    to{
+        --spread: 20px;
+        corner-shape:superellipse(infinity);
+        box-shadow:0 0 var(--spread) white;
+    }
+}
+
+.decoration{
+    animation-name: decor-animation;
+    animation-delay: calc(sibling-index() * 0.5s);
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
+    animation-direction:alternate-reverse;
 }
 
 .house-grid section{
     animation-name: fade-in;
-    animation-duration:1.5s;
+    animation-duration:1s;
     animation-timing-function:ease-in;
-    animation-delay: calc(sibling-index() * 1s);
+    animation-delay: calc(sibling-index() * 0.5s);
     animation-fill-mode:backwards;
 }
 

@@ -1,142 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Sorticus - Sorting Result</title>
-  <meta name="description" content="sorticus - A minimal, aesthetic sorting visualizer and playground.">
-  <meta name="author" content="sorticus">
-  <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="hsl(262 83% 58%)">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Beau+Rivage&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,auto_fix_high,shield,memory,terminal,code,psychology,database&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="Base-style.css">
-  <link rel="stylesheet" href="Components.css">
-  <link rel="stylesheet" href="Layout.css">
-  <link rel="stylesheet" href="Animations.css">
-</head>
-<body>
-  <header>
-    <section role="banner" aria-label="Website Name">  
-      <a class="project-name" href="index.html">
-         Sorticus
-      </a>
-      <p>School of witchcraft &amp; wizardry</p>
-    </section>
-    <nav>
-      <ul>
-        <li><a href="index.html">welcome</a></li>
-        <li><a href="houses.html">the four Houses</a></li>
-        <li><a href="quiz.html">sorting ceremony</a></li>
-        <li><a aria-current="page" href="profile.html">
-            sorting result</a>
-       </li>
-      </ul>
-    </nav>
-  </header>
-    
-  <main>
-    <p class="registrat">
-      <span class="gold">Sanctum Sanctorum</span>
-      <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
-      Registrar of initiates
-    </p>
-
-    <!-- PROFILE CERTIFICATE  -->
-    <section>
-      <h2 class="kicker gold"> Ministry of Magic & Hogwarts Council </h2>
-      <article>
-        <h3 class="gold">Official parchment of inscription</h3>
-        <p>Let it be proclaimed before the Great Hall that</p>
-        <strong class="gold" id="student-name">Cedric Vance</strong>
-
-        <figure>
-          <img id="house-crest" src="Gryffindor-house-logo.jpg" alt="Gryffindor Heraldic Crest">
-          <figcaption id="house-motto">“Forti Animo Estote” — Be of Brave Mind</figcaption>
-        </figure>
-        
-        <p>Ascended into <strong><span id="house-name" class="gold">House Gryffindor</span></strong></p>
-        
-        <blockquote>
-          <p>By Decree of the enchanted Sorting Hat, witnessed by the Deputy Headmistress and irreversibly enrolled in the Great Hall Register.</p>
-        </blockquote>
-        
-        <div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Sorticus - Find Your House
+    </title>
+    <meta name="description" content="sorticus - A minimal, aesthetic sorting visualizer and playground.">
+    <meta name="author" content="sorticus">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="hsl(262 83% 58%)">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:title" content="sorticus">
+    <meta property="og:description" content="A minimal, aesthetic sorting visualizer.">
+    <meta property="og:type" content="website">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 1. Text fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Beau+Rivage&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 2. Ligatures / Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,psychology_alt,terminal,code,memory,&display=swap" rel="stylesheet">
+    <!-- my own CSS files -->
+    <link rel="stylesheet" href="Base-style.css">
+    <link rel="stylesheet" href="Components.css">
+    <link rel="stylesheet" href="Layout.css">
+    <link rel="stylesheet" href="Animations.css">
+    <!-- my own JS files -->
+    <script src="Main.js" defer>
+    </script>
+    <body>
+      <header>
+        <section role="banner" aria-label="Website Name">
+          <a class="project-name" href="index.html">
+            Hogwarts
+          </a>
+          <p>
+            School of witchcraft &amp; wizardry
+          </p>
+        </section>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">
+                welcome
+              </a>
+            </li>
+            <li>
+              <a href="houses.html">
+                the four Houses
+              </a>
+            </li>
+            <li>
+              <a href="quiz.html">
+                sorting ceremony
+              </a>
+            </li>
+            <li>
+              <a aria-current="page" href="profile.html">
+                sorting result
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <p class="registrat">
+          <span class="gold">
+            Sanctum Sanctorum
+          </span>
+          <span class="material-symbols-outlined" aria-hidden="true">
+            auto_awesome
+          </span>
+          Registrar of initiates
+        </p>
+        <!-- PROFILE CERTIFICATE  -->
+        <section>
+          <h2 class="kicker gold">
+            Ministry of Magic & Hogwarts Council
+          </h2>
+          <article>
+            <h3 class="gold">
+              Official parchment of inscription
+            </h3>
             <p>
-            <span class="gold">Albus Dumbledore</span>
-            <span class="motto">Grand Sorceror & Headmaster
-            </span>
-        </p>
-        <p>
-            <span class="gold">Minerva McGonagall</span>
-            <span class="motto">Deputy Headmistress</span>
-        </p>
-        </div>
-      </article>
-    </section>
-    
-    <hr>
-    
-    <section>
-          <h2 class="gold">Peer Allocation Registry</h2>
-        <div>
-              <article>
-              <p>allocation date: <time datetime="" class="alloc-time"></time></p>
-              <h3 class="stud-name"></h3>
+              Let it be proclaimed before the Great Hall that
+            </p>
+            <strong class="gold" id="student-name">
+              Cedric Vance
+            </strong>
+            <figure>
+              <img id="house-crest" src="Gryffindor-house-logo.jpg" alt="Gryffindor Heraldic Crest">
+              <figcaption id="house-motto">
+                “Forti Animo Estote” — Be of Brave Mind
+              </figcaption>
+            </figure>
+            <p>
+              Ascended into
+              <strong>
+                <span id="house-name" class="gold">
+                  House Gryffindor
+                </span>
+              </strong>
+            </p>
+            <blockquote>
               <p>
-                   Ascended into 
-                  <strong class="gold"></strong>
+                By Decree of the enchanted Sorting Hat, witnessed by the Deputy Headmistress and irreversibly enrolled in the Great Hall Register.
               </p>
-              
-              <img src="" alt="">
+            </blockquote>
+            <div>
+              <p>
+                <span class="gold">
+                  Albus Dumbledore
+                </span>
+                <span class="motto">
+                  Grand Sorceror & Headmaster
+                </span>
+              </p>
+              <p>
+                <span class="gold">
+                  Minerva McGonagall
+                </span>
+                <span class="motto">
+                  Deputy Headmistress
+                </span>
+              </p>
+            </div>
           </article>
+        </section>
+        <hr>
+        <section>
+          <h2 class="gold">
+            Peer Allocation Registry
+          </h2>
+          <div>
+            <article>
+              <p>
+                allocation date:
+                <time datetime="1991-09-01" class="alloc-time">
+                  01/09/1991
+                </time>
+              </p>
+              <h3 class="stud-name">
+                Harry Potter
+              </h3>
+              <p>
+                Ascended into
+                <strong class="gold">
+                  Gryffindor
+                </strong>
+              </p>
+              <img src="Gryffindor-house-logo.jpg" alt="Gryffindor Heraldic Crest">
+            </article>
+            <article>
+              <p>
+                allocation date:
+                <time datetime="1991-09-01" class="alloc-time">
+                  01/09/1991
+                </time>
+              </p>
+              <h3 class="stud-name">
+                Hermione Granger
+              </h3>
+              <p>
+                Ascended into
+                <strong class="gold">
+                  Gryffindor
+                </strong>
+              </p>
+              <img src="Gryffindor-house-logo.jpg" alt="Gryffindor Heraldic Crest">
+            </article>
+            <article>
+              <p>
+                allocation date:
+                <time datetime="1991-09-01" class="alloc-time">
+                  01/09/1991
+                </time>
+              </p>
+              <h3 class="stud-name">
+                Ron Weasley
+              </h3>
+              <p>
+                Ascended into
+                <strong class="gold">
+                  Gryffindor
+                </strong>
+              </p>
+              <img src="Gryffindor-house-logo.jpg" alt="Gryffindor Heraldic Crest">
+            </article>
+            <article>
+              <p>
+                allocation date:
+                <time datetime="1991-09-01" class="alloc-time">
+                  01/09/1991
+                </time>
+              </p>
+              <h3 class="stud-name">
+                Draco Malfoy
+              </h3>
+              <p>
+                Ascended into
+                <strong class="gold">
+                  Slytherin
+                </strong>
+              </p>
+              <img src="Slytherin-house-logo.jpg" alt="Slytherin Heraldic Crest">
+            </article>
+            <article>
+              <p>
+                allocation date:
+                <time datetime="1989-09-01" class="alloc-time">
+                  01/09/1989
+                </time>
+              </p>
+              <h3 class="stud-name">
+                Cedric Diggory
+              </h3>
+              <p>
+                Ascended into
+                <strong class="gold">
+                  Hufflepuff
+                </strong>
+              </p>
+              <img src="Hufflepuff-house-logo.jpg" alt="Hufflepuff Heraldic Crest">
+            </article>
+            <article>
+              <p>
+                allocation date:
+                <time datetime="1938-09-01" class="alloc-time">
+                  01/09/1938
+                </time>
+              </p>
+              <h3 class="stud-name">
+                Tom Marvolo Riddle
+              </h3>
+              <p>
+                Ascended into
+                <strong class="gold">
+                  Slytherin
+                </strong>
+              </p>
+              <img src="Slytherin-house-logo.jpg" alt="Slytherin Heraldic Crest">
+            </article>
           </div>
+        </section>
+        <section class="registry" aria-labelledby="heading">
+          <div class="registry-system">
+            <span class="material-symbols-outlined" aria-hidden="true">
+              terminal
+            </span>
+            <h2 id="heading">
+              Scholastic Technical Registry
+            </h2>
+          </div>
+          <p>
+            Hogwarts Sorting Logic • System Telemetry v9.4
+          </p>
+          <ul class="registry-credits">
+            <li>
+              <strong>
+                <span class="material-symbols-outlined gold">
+                  code
+                </span>
+                Adrish:
+              </strong>
+              HTML, CSS, Pagination & Deployment
+            </li>
+          </ul>
+        </ul>
       </section>
-    
-    <section class="registry" aria-labelledby="heading">
-      <div class="registry-system">
-        <span class="material-symbols-outlined" aria-hidden="true">terminal</span> 
-        <h2 id="heading">Scholastic Technical Registry</h2>
-      </div> 
-      <p>Hogwarts Sorting Logic • System Telemetry v9.4</p>
-        <ul class="registry-credits">
-          <li>
-            <strong>
-              <span class="material-symbols-outlined gold">
-                code
-              </span> 
-              Adrish:
-            </strong>
-            HTML, CSS, Pagination & Deployment
-          </li>
-          <li>
-            <strong>
-               <span class="material-symbols-outlined gold">
-                database
-              </span> 
-              Shreyansh:
-            </strong>
-            JavaScript, Database
-          </li>
-        </ul>
-        </ul>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p class="kicker gold">✦</p>
-    <q class="gold" style=" font-family:var(--font-playfair); ">
-          Draco Dormiens Nunquam Titillandus
-        </q>
-    <p class="description">
-      Never Tickle a Sleeping Dragon&period; Preserving centuries of magical lineage&comma; scholastic pursuit and ancient arcane arts across Gryffindor&comma; Ravenclaw&comma; Hufflepuff and Slytherin
-    </p>
-  </footer>
-</body>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+      <p class="kicker gold">
+        ✦
+      </p>
+      <q class="gold" style=" font-family:var(--font-playfair); ">
+        Draco Dormiens Nunquam Titillandus
+      </q>
+      <p class="description">
+        Never Tickle a Sleeping Dragon&period; Preserving centuries of magical lineage&comma; scholastic pursuit and ancient arcane arts across Gryffindor&comma; Ravenclaw&comma; Hufflepuff and Slytherin
+      </p>
+    </footer>
+    <audio id="theme" src="Harry-Potter Leaving Hogwarts.mp3" loop preload="auto">
+    </audio>
+  </body>
 </html>
