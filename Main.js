@@ -10,20 +10,32 @@ const STORAGE = {
   onboardingStep: "sorticus.onboardingStep"
 };
 
-const STEPS = { PROFILE: 0, HOUSES: 1, QUIZ: 2 };
-const PAGES = { HOME: "index.html", HOUSES: "houses.html", QUIZ: "quiz.html" };
+const STEPS = {
+  PROFILE: 0,
+  HOUSES: 1,
+  QUIZ: 2
+};
+
+const PAGES = {
+  HOME: "index.html",
+  HOUSES: "houses.html",
+  QUIZ: "quiz.html"
+};
 
 // ================================================
 // DOM ELEMENTS
 // ================================================
 
-const setupButton=document.querySelector('#setup-profile');
-const housesButton = document.querySelector("#explore-houses");
-const quizButton = document.querySelector("#take-quiz");
+// Existing HTML order: Profile, Quiz, Houses
+const [setupButton, quizButton, housesButton] =
+  document.querySelectorAll(".action-btns button");
 
 const dobInput = document.querySelector("#input-dob");
 const firstNameInput = document.querySelector("#input-first-name");
 const lastNameInput = document.querySelector("#input-last-name");
+
+const profileDialog = document.querySelector("#dialog-modal");
+const profileForm = profileDialog?.querySelector("form");
 
 // ================================================
 // ONBOARDING STATE
@@ -33,8 +45,15 @@ const getOnboardingStep = () => {
   if (sessionStorage.getItem(STORAGE.profileCompleted) !== "true") {
     return STEPS.PROFILE;
   }
-  const savedStep = Number(sessionStorage.getItem(STORAGE.onboardingStep));
-  return Object.values(STEPS).includes(savedStep) ? savedStep : STEPS.HOUSES;
+
+  const savedStep = Number(
+    sessionStorage.getItem(STORAGE.onboardingStep)
+  );
+
+  // A completed profile should never return to the profile step.
+  return savedStep === STEPS.QUIZ
+    ? STEPS.QUIZ
+    : STEPS.HOUSES;
 };
 
 let currentStep = getOnboardingStep();
@@ -67,22 +86,18 @@ const updateActionButtons = () => {
 
     const isActive = currentStep === step;
 
-    // Reset button styling
     element.classList.remove(
       "btn--primary",
       "btn--accent",
       "btn--ghost"
     );
 
-    // Apply the correct styling
     element.classList.add(
       isActive ? "btn--primary" : inactiveClass
     );
 
-    // Only the current step is clickable
     element.disabled = !isActive;
 
-    // Accessibility
     if (isActive) {
       element.setAttribute("aria-current", "step");
       element.removeAttribute("data-tooltip");
@@ -102,7 +117,12 @@ const updateActionButtons = () => {
 
 const setOnboardingStep = (step) => {
   currentStep = step;
-  sessionStorage.setItem(STORAGE.onboardingStep, String(step));
+
+  sessionStorage.setItem(
+    STORAGE.onboardingStep,
+    String(step)
+  );
+
   updateActionButtons();
 };
 
@@ -111,16 +131,25 @@ const setOnboardingStep = (step) => {
 // ================================================
 
 const validateDateOfBirth = () => {
-  if (!dobInput?.value) return;
-  const selectedDate = new Date(`${dobInput.value}T00:00:00`);
-  const today = new Date(); today.setHours(0,0,0,0);
-  dobInput.setCustomValidity(selectedDate > today ? "Date of birth cannot be in the future." : "");
-  
-  currentStep = STEPS.HOUSES;
+  if (!dobInput) return;
 
-    updateActionButtons();
+  if (!dobInput.value) {
+    dobInput.setCustomValidity("");
+    return;
+  }
 
-    profileDialog.close();
+  const selectedDate = new Date(
+    `${dobInput.value}T00:00:00`
+  );
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  dobInput.setCustomValidity(
+    selectedDate > today
+      ? "Date of birth cannot be in the future."
+      : ""
+  );
 };
 
 dobInput?.addEventListener("input", validateDateOfBirth);
@@ -129,15 +158,24 @@ dobInput?.addEventListener("input", validateDateOfBirth);
 // PROFILE SUBMISSION
 // ================================================
 
-const profileForm = document.querySelector("#dialog-modal form");
 profileForm?.addEventListener("submit", (event) => {
   event.preventDefault();
+
   validateDateOfBirth();
+
   if (!profileForm.reportValidity()) return;
-  const displayName = [firstNameInput.value.trim(), lastNameInput.value.trim()].join(" ");
+
+  const displayName = [
+    firstNameInput.value.trim(),
+    lastNameInput.value.trim()
+  ].join(" ");
+
   sessionStorage.setItem(STORAGE.profileCompleted, "true");
   sessionStorage.setItem(STORAGE.displayName, displayName);
+
   setOnboardingStep(STEPS.HOUSES);
+
+  profileDialog.close();
 });
 
 // ================================================
@@ -146,6 +184,7 @@ profileForm?.addEventListener("submit", (event) => {
 
 housesButton?.addEventListener("click", () => {
   if (currentStep !== STEPS.HOUSES) return;
+
   window.location.assign(PAGES.HOUSES);
 });
 
@@ -155,6 +194,7 @@ housesButton?.addEventListener("click", () => {
 
 quizButton?.addEventListener("click", () => {
   if (currentStep !== STEPS.QUIZ) return;
+
   window.location.assign(PAGES.QUIZ);
 });
 
@@ -162,8 +202,16 @@ quizButton?.addEventListener("click", () => {
 // PAGE-AWARE PROGRESSION
 // ================================================
 
-const currentPage = window.location.pathname.split("/").pop().toLowerCase();
-if (currentPage === PAGES.HOUSES && sessionStorage.getItem(STORAGE.profileCompleted) === "true" && currentStep === STEPS.HOUSES) {
+const currentPage = window.location.pathname
+  .split("/")
+  .pop()
+  .toLowerCase();
+
+if (
+  currentPage === PAGES.HOUSES &&
+  sessionStorage.getItem(STORAGE.profileCompleted) === "true" &&
+  currentStep === STEPS.HOUSES
+) {
   setOnboardingStep(STEPS.QUIZ);
 }
 
@@ -177,15 +225,28 @@ updateActionButtons();
 // AUDIO INITIALIZATION
 // ================================================
 
-const audio = document.getElementById('theme');
+const audio = document.getElementById("theme");
 let started = false;
+
 function startMusic() {
   if (started || !audio) return;
+
   started = true;
-  audio.play().then(() => {
-    ['click','scroll','mousemove','keydown','touchstart','wheel'].forEach(e => window.removeEventListener(e, startMusic));
-  }).catch(()=>{ started = false; });
+
+  audio.play()
+    .then(() => {
+      ["click", "scroll", "mousemove", "keydown", "touchstart", "wheel"]
+        .forEach(eventName =>
+          window.removeEventListener(eventName, startMusic)
+        );
+    })
+    .catch(() => {
+      started = false;
+    });
 }
-['click','scroll','mousemove','keydown','touchstart','wheel'].forEach(e => 
-  window.addEventListener(e, startMusic, { passive: true })
-);
+
+["click", "scroll", "mousemove", "keydown", "touchstart", "wheel"]
+  .forEach(eventName =>
+    window.addEventListener(eventName, startMusic, { passive: true })
+  );
+
