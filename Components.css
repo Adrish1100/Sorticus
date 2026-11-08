@@ -172,13 +172,16 @@ footer q{
     font-family:var(--font-playfair);
 }
 
-[aria-label="Quote of the Sorting Hat"],blockquote > p:not(.inquest-quote){
-    background-image: radial-gradient(at top left, var(--surface-container-high), var(--surface-container-low));
+[aria-label="Quote of the Sorting Hat"],blockquote > p:where(:not(.inquest-quote)){
+    background-image: radial-gradient(at center, var(--surface-container-high), var(--surface-container-lowest) );
     font-family:var(--font-astloch);
+    inline-size:fit-content;
+    font-size: clamp(1rem, -0.3889rem + 4.9383vw, 3.5rem);
+    text-wrap:pretty;
+    text-align:center;
     margin-inline:1em;
     border-radius: 1em;
     corner-shape: squircle;
-    
     font-style:italic;
 }
 
@@ -202,14 +205,9 @@ q{
     font-family:var(--font-astloch);
 }
 /* === DECOR === */
-.decoration{
-    z-index:-1;
-    position:absolute;
-    background-color:white;
-    border-radius: 100%;
-    display:none;
-    inline-size: clamp(1rem,5vw,4rem);
-    block-size:clamp(1rem,5vw,4rem);
+
+dialog > .decoration{
+    z-indez:-1;
     
     &:nth-child(1){
         position-anchor:--sort-anchor;
@@ -222,14 +220,36 @@ q{
         position-area:center right;
         translate: -150% 50%;
     }
-    
-     &:nth-child(3){
+}
+
+body:has(.decoration){
+    isolation:isolate;
+}
+
+.decoration {
+    z-index:-1;
+    position:fixed;
+    background-color:white;
+    border-radius: 100%;
+    display:none;
+    inline-size: clamp(1rem,5vw,4rem);
+    block-size:clamp(1rem,5vw,4rem);
+    &:nth-child(1)  {
+        inset: 30svi auto auto 8svi;
+    }
+
+    &:nth-child(2)  {
+        inset:  25svi 30svi auto auto;
+    }
+
+    &:nth-child(3)  {
         inset: auto 20svi 55svi auto;
     }
-    
-     &:nth-child(4){
-        inset: auto auto 50svi 25svi ;
+
+    &:nth-child(4)  {
+        inset: auto auto 25svi 30svi;
     }
+
 }
 
 

@@ -28,12 +28,11 @@
     <link rel="stylesheet" href="Layout.css">
     <link rel="stylesheet" href="Animations.css">
     <!-- my own JS files -->
-    <script src="Main.js" defer>
-    </script>
-    <script src="Quiz.js" defer>
-    </script>
+    <script src="main.js" defer></script>
+    <script src="quizData.js" defer></script>
+    <script src="quiz.js" defer></script>
   </head>
-  <body>
+  <body data-page="quiz">
     <header>
       <section role="banner" aria-label="Website Name">
         <a class="project-name" href="index.html">
@@ -113,7 +112,6 @@
           VII · ᚺ
         </li>
       </ol>
-    </section>
     <!-- Left -->
     <section aria-label="" class="sorting-hat inquest-card">
       <figure class="inquest-figure">
@@ -198,7 +196,6 @@
       name="sorting-answer"
       value="hufflepuff"
       data-text="C"
-      onchange="selectOption(this.closest('article'), 'hufflepuff', { loyalty: 20, honor: 12, patience: 10 })"
     >
             <span role="heading" aria-level="2">
               Form an unbreakable circle with your companions, ensuring no one is left behind or forgotten.
@@ -215,7 +212,7 @@
       name="sorting-answer"
       value="ravenclaw"
       data-text="D"
-      onchange="selectOption(this.closest('article'), 'ravenclaw', { wisdom: 18, wit: 14, intellect: 10 })"
+      
     >
             <span role="heading" aria-level="2">
               Analyze the incantation or entity immediately, deducing the exact counter-curse.

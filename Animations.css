@@ -116,21 +116,14 @@ main{
     }
 }
 
-.decoration{
-    animation-name: decor-animation;
-    animation-delay: calc(sibling-index() * 0.5s);
-    animation-duration:2s;
-    animation-iteration-count: infinite;
-    animation-timing-function:ease-in-out;
-    animation-direction:alternate-reverse;
+.decoration {
+  animation: decor-animation 2s ease-in-out 
+  calc(sibling-index() * 0.5s) infinite reverse;
 }
 
-.house-grid section{
-    animation-name: fade-in;
-    animation-duration:1s;
-    animation-timing-function:ease-in;
-    animation-delay: calc(sibling-index() * 0.5s);
-    animation-fill-mode:backwards;
+.house-grid section {
+  animation: fade-in 1s ease-in 
+  calc(sibling-index() * 0.5s) backwards;
 }
 
 section:where(:has(h2[class="gold"])) div {
@@ -161,6 +154,7 @@ section:where(:has(h2[class="gold"])) div {
     color:hsl(from var(--primary) h s 50%);
     text-shadow: 0 0 5px hsl(from var(--primary) h s 50%);
   }
+  
   &::scroll-button(right){
     content: '➢';
     position-area:center right;
@@ -178,15 +172,18 @@ section:where(:has(h2[class="gold"])) div {
     translate:50% 0;
   }
 
-  &::scroll-marker-group{ 
-    padding-block-start:0.5em;      
-    display:flex;
+  &::scroll-marker-group{   
+    display:inline-flex;
+    margin-block-start:1.5lh;
     gap:0.5ch;
+    flex-flow:row wrap;
+    
+    inline-size:60%;
     justify-content:center;
-
+    align-content:center;
   }
 
-  & article::scroll-marker{
+  & > article::scroll-marker{
     content:'';  
     inline-size:1em;
     block-size:1em;
@@ -196,7 +193,7 @@ section:where(:has(h2[class="gold"])) div {
     background-color:var(--surface-container-high);
     border-radius: 50%;
     }
-   & article::scroll-marker:target-current{
+   & > article::scroll-marker:target-current{
         background-color:hsl(from var(--primary) h s 50%);
     }
 }
