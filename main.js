@@ -92,7 +92,6 @@
   const isProfileComplete = () =>
     localStore.get(STORAGE.profileCompleted) === "true";
 
-
   // Which page is this? data-page on <body> wins; otherwise the file name
   // in the address (works for /quiz.html and for clean URLs like /quiz).
   const PAGE = (() => {
@@ -154,7 +153,6 @@
     // SORTICUS — SITE-WIDE: ONBOARDING + AUDIO
     // Loaded on every page. Needs <body data-page="home|houses|quiz|profile">.
     // ==========================================
-
 
     const page = PAGE;
 
@@ -225,6 +223,67 @@
       const firstNameInput = form.querySelector("#input-first-name");
       const lastNameInput = form.querySelector("#input-last-name");
 
+      // ---- Name validation ----
+      const BLOCKED_NAME_TERMS = [
+        "fk",
+        "fuk",
+        "hell",
+        "fuck",
+        "fucking",
+        "shit",
+        "bitch",
+        "asshole",
+        "bastard",
+        "whore",
+        "dead",
+        "death",
+        "die",
+        "kill",
+        "murder",
+        "ded",
+        "wat"
+      ];
+
+      function validateStudentName(name) {
+        const normalized = name
+          .normalize("NFKC")
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, " ")
+          .replace(/\s+/g, " ")
+          .trim();
+
+        if (!normalized) {
+          return {
+            valid: false,
+            message: "Please enter your name."
+          };
+        }
+
+        const words = normalized.split(" ");
+
+        const containsBlockedTerm = words.some(word =>
+          BLOCKED_NAME_TERMS.includes(word)
+        );
+
+        if (containsBlockedTerm) {
+          return {
+            valid: false,
+            message: "Please use an appropriate name."
+          };
+        }
+
+        return {
+          valid: true,
+          message: ""
+        };
+      }
+
+      const validateNameField = (input) => {
+        if (!input) return;
+        const result = validateStudentName(input.value);
+        input.setCustomValidity(result.valid ? "" : result.message);
+      };
+
       const validateDateOfBirth = () => {
         if (!dobInput) return;
 
@@ -243,11 +302,20 @@
       };
 
       dobInput?.addEventListener("input", validateDateOfBirth);
-      form.addEventListener("reset", () => dobInput?.setCustomValidity(""));
+      firstNameInput?.addEventListener("input", () => validateNameField(firstNameInput));
+      lastNameInput?.addEventListener("input", () => validateNameField(lastNameInput));
+
+      form.addEventListener("reset", () => {
+        dobInput?.setCustomValidity("");
+        firstNameInput?.setCustomValidity("");
+        lastNameInput?.setCustomValidity("");
+      });
 
       form.addEventListener("submit", (event) => {
         event.preventDefault();
         validateDateOfBirth();
+        validateNameField(firstNameInput);
+        validateNameField(lastNameInput);
 
         if (!form.reportValidity()) return;
 
@@ -256,7 +324,6 @@
 
         localStore.set(STORAGE.profileCompleted, "true");
         localStore.set(STORAGE.displayName, displayName);
-
 
         setStep(STEPS.HOUSES);
         dialog.close();
