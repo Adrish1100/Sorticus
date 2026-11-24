@@ -27,13 +27,13 @@
   --on-valid-container: hsl(142 70% 92%);
   
   /* ==== FONTS ==== */
-  --font-playfair: "Playfair Display", serif;
-  --font-garamond: "EB Garamond", Georgia, serif;
-  --font-astloch: "Astloch", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
-  --font-beau-rivage: "Beau Rivage", "Segoe Script", "Brush Script MT", "Lucida Handwriting", cursive;
+  --font-playfair: Didot, "Bodoni MT", "Times New Roman", "Liberation Serif", Georgia, serif;
   
-  overflow-x:clip;
+  --font-garamond: Garamond, "Palatino Linotype", Palatino, "Book Antiqua", "Times New Roman", Times, Georgia, serif; 
+
+  --font-astloch: "Old English Text MT", "Blackadder ITC", "Bradley Hand", Georgia, serif;  
   
+  --font-beau-rivage: "Beau Rivage", "Segoe Script", "Brush Script MT", "Lucida Handwriting", "Snell Roundhand", "Edwardian Script ITC", "Apple Chancery", cursive;
 }
 
 
@@ -96,6 +96,7 @@ html{
     color-scheme:dark;
     scroll-behavior:smooth;
     scroll-padding-top:12vh;  
+    overflow-x:clip; 
 }
 
 
@@ -107,16 +108,13 @@ body{
     min-block-size:100svb;
 }
 
-
 /* ===== HEADINGS ===== */
 h1 {
   text-align: center;
-  font-family: var(--font-playfair);
+  font-family:var(--font-playfair);
   font-variant: small-caps;
-}
-
-is:(h1,h2,h3,h4,h5,h6){
-    word-spacing:1.5ch;
+  font-size: clamp(1rem, -1.2785rem + 8.1013vw, 5rem);
+  
 }
 
 p:not(.house-section p){
@@ -175,10 +173,11 @@ a:not(.project-name)[aria-current="page"]{
       font-style: normal;
       font-variant: small-caps;
       font-weight: bold;
-      font-size: clamp(1.15em, 0.68em + 1.48vw, 2em);
+      font-size: clamp(1.1em, 0.5em + 1.5vw, 2em);
       line-height: 1.6;
       font-family: var(--font-playfair);
       color:var(--primary);
+      margin-block-end:-1em;
 }
 
 @property --spread{
@@ -197,4 +196,11 @@ a:not(.project-name)[aria-current="page"]{
     span.decoration{
         display:block !important;
     }
+}
+
+@supports not (corner-shape: scoop) {
+        .house-section footer::before, 
+        .house-section footer::after{
+            display:none !important;
+        }
 }

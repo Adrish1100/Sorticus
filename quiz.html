@@ -18,9 +18,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- 1. Text fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Beau+Rivage&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Kalam:wght@400;700&family=Patrick+Hand&family=Handlee&family=Playfair+Display:wght@400;500;700&family=Victor+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- 2. Ligatures / Icons -->
+    <!-- 1. Ligatures / Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=spa,auto_awesome,local_fire_department,water_drop,psychology_alt,terminal,code,memory,east&display=swap" rel="stylesheet">
     <!-- my own CSS files -->
     <link rel="stylesheet" href="Base-style.css">
@@ -146,7 +144,7 @@
           psychology_alt
         </span>
       </p>
-      <h1 class="gold">
+      <h1 class="gold" id="question">
         When faced with imminent magical danger, your first instinct is to:
       </h1>
       <p class="description">
@@ -228,10 +226,12 @@
           Choice seals upon inscription
         </em>
         <button id="next-btn" type="button">
+          <a href="#question">
           Next Question
           <span class="material-symbols-outlined next-question" aria-hidden="true">
             east
           </span>
+          </a>
         </button>
       </div>
     </section>
